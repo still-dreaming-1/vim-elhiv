@@ -1,19 +1,36 @@
 UTSuite elhiv
 
 function! s:Test_parse_parent_dir()
+	let l:parent= elhiv#parse_parent_dir('i_am_the_parent/made_up_non_existent_dir')
+	AssertEquals('i_am_the_parent', l:parent)
+endfunction
+
+function! s:Test_parse_short_parent_dir()
 	let l:parent= elhiv#parse_parent_dir('~/made_up_non_existent_dir')
 	AssertEquals('~', l:parent)
-	AssertEquals(1, type(l:parent))
 endfunction
 
-function! s:Test_parse_parent_dir_when_ends_with_slash()
+function! s:Test_parse_short_parent_dir_when_ends_with_slash()
 	let l:parent= elhiv#parse_parent_dir('~/made_up_non_existent_dir/')
 	AssertEquals('~', l:parent)
-	AssertEquals(1, type(l:parent)) " string type
 endfunction
 
-function! s:Test_parse_when_no_parent()
+function! s:Test_parse_short_when_no_parent()
 	let l:parent= elhiv#parse_parent_dir('~')
-	AssertEquals(0, l:parent)
-	AssertEquals(0, type(l:parent)) " number type
+	AssertEquals('', l:parent)
+endfunction
+
+function! s:Test_parse_no_parent_when_dir_is_dot()
+	let l:parent= elhiv#parse_parent_dir('.')
+	AssertEquals('', l:parent)
+endfunction
+
+function! s:Test_parse_no_parent_when_dir_is_dot_slash()
+	let l:parent= elhiv#parse_parent_dir('./')
+	AssertEquals('', l:parent)
+endfunction
+
+function! s:Test_parse_when_parent_is_dot()
+	let l:parent= elhiv#parse_parent_dir('./some_dir')
+	AssertEquals('.', l:parent)
 endfunction
