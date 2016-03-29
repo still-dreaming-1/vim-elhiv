@@ -1,6 +1,11 @@
 UTSuite elhiv
 
 function! s:Test_parse_parent_dir()
+	let l:parent= elhiv#parse_parent_dir('/i_am_the_parent/made_up_non_existent_dir')
+	AssertEquals('/i_am_the_parent', l:parent)
+endfunction
+
+function! s:Test_parse_parent_dir_with_no_starting_slash()
 	let l:parent= elhiv#parse_parent_dir('i_am_the_parent/made_up_non_existent_dir')
 	AssertEquals('i_am_the_parent', l:parent)
 endfunction
