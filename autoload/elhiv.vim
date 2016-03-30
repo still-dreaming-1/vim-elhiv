@@ -5,3 +5,7 @@ function! elhiv#parse_parent_dir(dir_path)
 	endif
 	return a:dir_path[0:l:last_slash_idx - 1]
 endfunction
+
+function! elhiv#get_cursor_char()
+	return getline(".")[col(".")-1]
+endfunction
