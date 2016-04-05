@@ -1,5 +1,8 @@
 function! l_dir#new(path)
-	let l:dir= { 'path' : a:path }
+	let l:dir= {
+		\ 'path' : a:path,
+		\ 'exists' : 0 }
+	let l:dir['exists']= isdirectory(l:dir.path)
 	function! l:dir.parent()
 		let l:s= l_s#new()
 		let l:last_slash_idx= l:s.ridx(self.path, '/', len(self.path) - 2)

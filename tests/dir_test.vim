@@ -70,3 +70,13 @@ function! s:Test_parent_not_static()
 	AssertEquals('/i_am_grandma', l:a_grandma.path)
 	AssertEquals('', l:b_grandma)
 endfunction
+
+function! s:Test_empty_dir_not_exists()
+	let l:dir= l_dir#new('')
+	AssertEquals(0, l:dir.exists)
+endfunction
+
+function! s:Test_home_dir_exists()
+	let l:dir= l_dir#new('/home')
+	AssertEquals(1, l:dir.exists)
+endfunction
