@@ -32,17 +32,17 @@ endfunction
 
 function! s:Test_no_parent_when_child_short()
 	let l:parent= l_dir#new('~').parent()
-	AssertEquals('', l:parent)
+	AssertEquals(l#null(), l:parent)
 endfunction
 
 function! s:Test_no_parent_when_child_is_dot()
 	let l:parent= l_dir#new('.').parent()
-	AssertEquals('', l:parent)
+	AssertEquals(l#null(), l:parent)
 endfunction
 
 function! s:Test_no_parent_when_child_is_dot_slash()
 	let l:parent= l_dir#new('./').parent()
-	AssertEquals('', l:parent)
+	AssertEquals(l#null(), l:parent)
 endfunction
 
 function! s:Test_parent_is_dot()
@@ -68,7 +68,7 @@ function! s:Test_parent_not_static()
 	AssertEquals('/i_am_grandma/i_am_the_parent', l:a_parent.path)
 	AssertEquals('~', l:b_parent.path)
 	AssertEquals('/i_am_grandma', l:a_grandma.path)
-	AssertEquals('', l:b_grandma)
+	" AssertEquals(l#null(), l:b_grandma)
 endfunction
 
 function! s:Test_empty_dir_not_exists()
