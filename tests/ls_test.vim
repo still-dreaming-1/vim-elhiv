@@ -92,3 +92,10 @@ function! s:Test_only_contains_number_1()
 	Assert !l:ls.contains('1')
 	Assert !l:ls.contains('0')
 endfunction
+
+function! s:Test_contains_case_sensitive()
+	let l:ls= l_ls#new()
+	call l:ls.add('a')
+	Assert l:ls.contains('a')
+	Assert !l:ls.contains('A')
+endfunction

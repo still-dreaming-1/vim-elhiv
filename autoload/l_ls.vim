@@ -19,7 +19,7 @@ function! l_ls#new(...)
 		while l:i < self.len()
 			let l:my_value= { 'value' : self.ls[l:i] }
 			let l:other_value= { 'value' : a:value }
-			if l:my_value == l:other_value
+			if l:my_value ==# l:other_value
 				return 1
 			endif
 			let l:i+= 1
