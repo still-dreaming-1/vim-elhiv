@@ -1,4 +1,4 @@
-function! l_unique_ls#new(...)
+function! l_u_ls#new(...)
 	let l:u_ls= { 'ls' : [] }
 	let l:u_ls._ls= l_ls#new(l:u_ls.ls)
 
