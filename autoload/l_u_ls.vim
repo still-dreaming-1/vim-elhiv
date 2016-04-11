@@ -18,11 +18,9 @@ function! l_u_ls#new(...)
 
 	if a:0 > 0
 		let l:start_ls= a:1
-		let l:i= 0
-		while l:i < len(l:start_ls)
-			call l:u_ls.add(l:start_ls[l:i])
-			let l:i+= 1
-		endwhile
+		for l:value in l:start_ls
+			call l:u_ls.add(l:value)
+		endfor
 	endif
 
 	return l:u_ls
