@@ -15,15 +15,13 @@ function! l_ls#new(...)
 	endfunction
 
 	function! l:ls.contains(value)
-		let l:i= 0
-		while l:i < self.len()
-			let l:my_value= { 'value' : self.ls[l:i] }
+		for l:value in self.ls
+			let l:my_value= { 'value' : l:value }
 			let l:other_value= { 'value' : a:value }
 			if l:my_value ==# l:other_value
 				return 1
 			endif
-			let l:i+= 1
-		endwhile
+		endfor
 		return 0
 	endfunction
 
