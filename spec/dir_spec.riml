@@ -7,9 +7,13 @@ class dir_spec
 		expect(dir.path).to_equal('/i_am_the_path')
 	end
 
-	defm it_has_parent
+	defm it_has_accurate_parent_path
 		dir= new dir('/i_am_the_parent/made_up_non_existent_dir')
-		parent= dir.parent()
-		expect(parent.path).to_equal('/i_am_the_parent')
-	endfunction
+		expect(dir.parent().path).to_equal('/i_am_the_parent')
+	end
+
+	defm it_has_accurate_parent_path_when_no_starting_slash()
+		dir= new dir('i_am_the_parent/made_up_non_existent_dir')
+		expect(dir.parent().path).to_equal('i_am_the_parent')
+	end
 end
