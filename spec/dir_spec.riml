@@ -1,0 +1,15 @@
+riml_include 'dsl.riml'
+riml_include 'elhiv.riml'
+
+class dir_spec
+	defm it_has_path
+		dir= new dir('/i_am_the_path')
+		expect(dir.path).to_equal('/i_am_the_path')
+	end
+
+	defm it_has_parent
+		dir= new dir('/i_am_the_parent/made_up_non_existent_dir')
+		parent= dir.parent()
+		expect(parent.path).to_equal('/i_am_the_parent')
+	endfunction
+end

@@ -1,0 +1,15 @@
+class dir
+	def initialize(path)
+		self.path= path
+		self.exists= isdirectory(path)
+	end
+
+	defm parent
+		s= new s()
+		last_slash_idx= s.ridx(self.path, '/', len(self.path) - 2)
+		if last_slash_idx < 1 "0 or -1
+			return l#null()
+		end
+		return new dir(self.path[0:last_slash_idx - 1])
+	end
+end
