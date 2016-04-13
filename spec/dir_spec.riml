@@ -21,4 +21,9 @@ class dir_spec
 		dir= new dir('~/made_up_non_existent_dir')
 		expect(dir.parent().path).to_equal('~')
 	end
+
+	defm it_has_accurate_parent_path_when_child_ends_with_slash
+		dir= new dir('your_mom/made_up_non_existent_dir/')
+		expect(dir.parent().path).to_equal('your_mom')
+	end
 end
