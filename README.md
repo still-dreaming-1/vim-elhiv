@@ -6,4 +6,6 @@ elhiv stands for extreme language hacking in VimL. Extreme language hacking is m
 
 **Installation**
 
-Install it the normal way you install Vim plugins, nothing special.
+First install it the normal way using your favorite plugin manager. Then, from your config file, source elhiv.vim. This line will work inside most
+Neovim config files:
+`source $HOME/.config/nvim/plugged/vim-elhiv/elhiv.vim`
