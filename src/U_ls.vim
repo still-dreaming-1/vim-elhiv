@@ -1,6 +1,6 @@
-function! l_u_ls#new(...)
+function! U_ls(...)
 	let l:u_ls= { 'ls' : [] }
-	let l:u_ls._ls= l_ls#new(l:u_ls.ls)
+	let l:u_ls._ls= Ls(l:u_ls.ls)
 
 	function! l:u_ls.len()
 		return self._ls.len()

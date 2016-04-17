@@ -1,4 +1,4 @@
-function! l_s#new()
+function! S()
 	let l:s= {}
 
 	function! l:s.ridx(haystack, needle, ...)
@@ -8,5 +8,6 @@ function! l_s#new()
 		endif
 		return strridx(a:haystack, a:needle)
 	endfunction
+
 	return l:s
 endfunction

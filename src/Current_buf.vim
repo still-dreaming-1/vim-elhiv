@@ -1,7 +1,9 @@
-function! l_buf#current()
+function! Current_buf()
 	let l:buf= {}
+
 	function! l:buf.dir()
-		return l_dir#new(expand("%:p:h"))
+		return Dir(expand("%:p:h"))
 	endfunction
+
 	return l:buf
 endfunction

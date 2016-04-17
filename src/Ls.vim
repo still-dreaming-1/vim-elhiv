@@ -1,4 +1,4 @@
-function! l_ls#new(...)
+function! Ls(...)
 	let l:ls= {}
 	if a:0 > 0
 		let l:ls.ls= a:1
