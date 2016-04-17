@@ -1,4 +1,4 @@
-function! Curent_cursor()
+function! Current_cursor()
 	let l:cursor= {}
 	function! l:cursor.word()
 		return expand('<cword>')
