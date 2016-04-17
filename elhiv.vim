@@ -27,7 +27,7 @@ endfunction
 let s:current_script_path= expand('<sfile>')
 let s:src_dir= Dir(s:current_script_path).parent().path.'/src/'
 execute 'source '.s:src_dir.'Current_buf.vim'
-execute 'source '.s:src_dir.'Cursor.vim'
+execute 'source '.s:src_dir.'Current_cursor.vim'
 execute 'source '.s:src_dir.'Dir.vim'
 execute 'source '.s:src_dir.'l.vim'
 execute 'source '.s:src_dir.'U_ls.vim'
