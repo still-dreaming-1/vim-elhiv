@@ -1,4 +1,4 @@
-UTSuite ls
+UTSuite Ls
 
 function! s:Test_new()
 	let ls= Ls()

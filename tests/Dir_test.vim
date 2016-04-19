@@ -1,4 +1,4 @@
-UTSuite dir
+UTSuite Dir
 
 function! s:Test_path()
 	AssertEquals('/i_am_the_path', Dir('/i_am_the_path').path)

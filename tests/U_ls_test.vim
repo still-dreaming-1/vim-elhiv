@@ -1,4 +1,4 @@
-UTSuite unique_ls
+UTSuite U_ls
 
 function! s:Test_new()
 	let ls= U_ls()
