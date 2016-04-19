@@ -21,6 +21,10 @@ function! Dir(path)
 		return Dir(self.path[0:l:last_slash_idx - 1])
 	endfunction
 
+	function! l:dir.get_contained_dir(name)
+		return Dir(self.path.'/'.a:name)
+	endfunction
+
 	return l:dir
 endfunction
 

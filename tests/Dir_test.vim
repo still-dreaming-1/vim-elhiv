@@ -47,3 +47,9 @@ endfunction
 function! s:Test_home_dir_exists()
 	AssertEquals(1, Dir('/home').exists)
 endfunction
+
+function! s:Test_contained_dir_has_correct_path()
+	let dir= Dir('/some_dir')
+	let contained_dir= dir.get_contained_dir('inside')
+	AssertEquals('/some_dir/inside', contained_dir.path)
+endfunction
