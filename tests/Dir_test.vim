@@ -4,8 +4,18 @@ function! s:Test_path()
 	AssertEquals('/i_am_the_path', Dir('/i_am_the_path').path)
 endfunction
 
+function! s:Test_can_be_root()
+	let dir= Dir('/')
+	AssertEquals('/', dir.path)
+	Assert dir.exists
+endfunction
+
 function! s:Test_parent()
 	AssertEquals('/i_am_the_parent', Dir('/i_am_the_parent/made_up_non_existent_dir').parent().path)
+endfunction
+
+function! s:Test_root_has_no_parent()
+	AssertEquals(Null(), Dir('/').parent())
 endfunction
 
 function! s:Test_parent_with_no_starting_slash()
