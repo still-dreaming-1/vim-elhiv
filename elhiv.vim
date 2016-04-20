@@ -29,11 +29,9 @@ function! Dir(path)
 		return File(self.path.'/'.a:name)
 	endfunction
 	
-	function! dir.copy_to(dir)
-		let cmd= 'cp "'.self.path.'" "'.a:dir.path.'"'
-		" return system(cmd)
-		return cmd
-	endfunction
+	" function! dir.copy_to(dir)
+	" 	return self.shell.run('cp "'.self.path.'" "'.a:dir.path.'"')
+	" endfunction
 
 	return dir
 endfunction
