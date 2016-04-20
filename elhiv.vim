@@ -28,6 +28,12 @@ function! Dir(path)
 	function! dir.get_contained_file(name)
 		return File(self.path.'/'.a:name)
 	endfunction
+	
+	function! dir.copy_to(dir)
+		let cmd= 'cp "'.self.path.'" "'.a:dir.path.'"'
+		" return system(cmd)
+		return cmd
+	endfunction
 
 	return dir
 endfunction
@@ -56,3 +62,5 @@ execute 'source '.s:src_dir_path.'/S.vim'
 execute 'source '.s:src_dir_path.'/types.vim'
 execute 'source '.s:src_dir_path.'/File.vim'
 execute 'source '.s:src_dir_path.'/Elhiv_file.vim'
+execute 'source '.s:src_dir_path.'/Shell_cmd_saver.vim'
+execute 'source '.s:src_dir_path.'/Shell.vim'
