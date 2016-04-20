@@ -1,5 +1,5 @@
 function! File(path)
-	let l:file= { 'path' : a:path }
-	let l:file.readable= filereadable(l:file.path)
-	return l:file
+	let file= { 'path' : a:path }
+	let file.readable= filereadable(file.path)
+	return file
 endfunction

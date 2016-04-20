@@ -1,9 +1,9 @@
 function! Current_cursor()
-	let l:cursor= {}
+	let cursor= {}
 
-	function! l:cursor.word()
+	function! cursor.word()
 		return expand('<cword>')
 	endfunction
 
-	return l:cursor
+	return cursor
 endfunction
