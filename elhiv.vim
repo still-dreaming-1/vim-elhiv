@@ -25,17 +25,34 @@ function! Dir(path)
 		return Dir(self.path.'/'.a:name)
 	endfunction
 
+	function! l:dir.get_contained_file(name)
+		return File(self.path.'/'.a:name)
+	endfunction
+
 	return l:dir
 endfunction
 
 let s:current_script_path= expand('<sfile>')
-let s:src_dir= Dir(s:current_script_path).parent().path.'/src/'
-execute 'source '.s:src_dir.'Current_buf.vim'
-execute 'source '.s:src_dir.'Current_cursor.vim'
-execute 'source '.s:src_dir.'Dir.vim'
-execute 'source '.s:src_dir.'l.vim'
-execute 'source '.s:src_dir.'U_ls.vim'
-execute 'source '.s:src_dir.'Ls.vim'
-execute 'source '.s:src_dir.'S.vim'
-execute 'source '.s:src_dir.'types.vim'
-execute 'source '.s:src_dir.'File.vim'
+
+function! Elhiv_dir()
+	let dir= Dir(s:current_script_path).parent()
+
+	function! dir.get_src_dir()
+		return self.get_contained_dir('src')
+	endfunction
+
+	return dir
+endfunction
+
+let s:src_dir_path= Elhiv_dir().get_src_dir().path
+
+execute 'source '.s:src_dir_path.'/Current_buf.vim'
+execute 'source '.s:src_dir_path.'/Current_cursor.vim'
+execute 'source '.s:src_dir_path.'/Dir.vim'
+execute 'source '.s:src_dir_path.'/l.vim'
+execute 'source '.s:src_dir_path.'/U_ls.vim'
+execute 'source '.s:src_dir_path.'/Ls.vim'
+execute 'source '.s:src_dir_path.'/S.vim'
+execute 'source '.s:src_dir_path.'/types.vim'
+execute 'source '.s:src_dir_path.'/File.vim'
+execute 'source '.s:src_dir_path.'/Elhiv_file.vim'
