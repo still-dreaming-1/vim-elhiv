@@ -9,27 +9,27 @@ function! Null()
 endfunction
 
 function! Dir(path)
-	let l:dir= {
+	let dir= {
 		\ 'path' : a:path,
 		\ 'exists' : isdirectory(a:path) }
 
-	function! l:dir.parent()
-		let l:last_slash_idx= strridx(self.path, '/', len(self.path) - 2)
-		if l:last_slash_idx < 1 "0 or -1
+	function! dir.parent()
+		let last_slash_idx= strridx(self.path, '/', len(self.path) - 2)
+		if last_slash_idx < 1 "0 or -1
 			return Null()
 		endif
-		return Dir(self.path[0:l:last_slash_idx - 1])
+		return Dir(self.path[0:last_slash_idx - 1])
 	endfunction
 
-	function! l:dir.get_contained_dir(name)
+	function! dir.get_contained_dir(name)
 		return Dir(self.path.'/'.a:name)
 	endfunction
 
-	function! l:dir.get_contained_file(name)
+	function! dir.get_contained_file(name)
 		return File(self.path.'/'.a:name)
 	endfunction
 
-	return l:dir
+	return dir
 endfunction
 
 let s:current_script_path= expand('<sfile>')
