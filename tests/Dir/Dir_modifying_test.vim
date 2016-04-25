@@ -2,58 +2,58 @@ UTSuite Dir_modifying
 
 function! s:Setup()
 	let dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
-	Assert dir.exists
+	Assert dir.get_exists()
 	let s:before_dir= dir.get_contained_dir('before')
-	Assert !s:before_dir.exists
+	Assert !s:before_dir.get_exists()
 	call s:before_dir.create_recursive()
 	let s:before_dir= Dir(s:before_dir.path)
-	Assert s:before_dir.exists
+	Assert s:before_dir.get_exists()
 	let s:empty_dir= s:before_dir.get_contained_dir('empty dir')
-	Assert !s:empty_dir.exists
+	Assert !s:empty_dir.get_exists()
 	call s:empty_dir.create_recursive()
 	let s:empty_dir= Dir(s:empty_dir.path)
-	Assert s:empty_dir.exists
+	Assert s:empty_dir.get_exists()
 	let s:after_dir= dir.get_contained_dir('after')
-	Assert !s:after_dir.exists
+	Assert !s:after_dir.get_exists()
 	call s:after_dir.create_recursive()
 	let s:after_dir= Dir(s:after_dir.path)
-	Assert s:after_dir.exists
+	Assert s:after_dir.get_exists()
 endfunction
 
 function! s:Teardown()
 	let dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
-	Assert dir.exists
+	Assert dir.get_exists()
 	let s:before_dir= Dir(s:before_dir.path)
-	Assert s:before_dir.exists
+	Assert s:before_dir.get_exists()
 	call s:before_dir.delete()
 	let s:before_dir= Dir(s:before_dir.path)
-	Assert !s:before_dir.exists
+	Assert !s:before_dir.get_exists()
 
 	let s:after_dir= Dir(s:after_dir.path)
-	Assert s:after_dir.exists
+	Assert s:after_dir.get_exists()
 	call s:after_dir.delete()
 	let s:after_dir= Dir(s:after_dir.path)
-	Assert !s:after_dir.exists
+	Assert !s:after_dir.get_exists()
 endfunction
 
 function! s:Test_copy_empty_dir_and_delete()
 	let copy= s:after_dir.get_contained_dir('empty dir')
-	Assert !copy.exists
+	Assert !copy.get_exists()
 	call s:empty_dir.copy_to(copy)
 	let copy= Dir(copy.path)
-	Assert copy.exists
+	Assert copy.get_exists()
 	call copy.delete()
 	let copy= Dir(copy.path)
-	Assert !copy.exists
+	Assert !copy.get_exists()
 endfunction
 
 function! s:Test_create_recursive_no_recursion_and_delete()
 	let new_dir= s:after_dir.get_contained_dir('new dir')
-	Assert !new_dir.exists
+	Assert !new_dir.get_exists()
 	call new_dir.create_recursive()
 	let new_dir= Dir(new_dir.path)
-	Assert new_dir.exists
+	Assert new_dir.get_exists()
 	call new_dir.delete()
 	let new_dir= Dir(new_dir.path)
-	Assert !new_dir.exists
+	Assert !new_dir.get_exists()
 endfunction
