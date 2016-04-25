@@ -22,8 +22,15 @@ function! Dir(path)
 		let contained_info= l_dir_info#new(self.path).get_contained_file_info(a:name)
 		return File(contained_info.path)
 	endfunction
+
+	function! dir.create_recursive()
+		call self._shell.run('mkdir "'.self.path.'"')
+	endfunction
 	
 	function! dir.copy_to(dir)
+		if !dir.exists
+			call dir.create_recursive
+		endif
 	endfunction
 
 	return dir

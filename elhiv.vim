@@ -18,3 +18,5 @@ execute 'source '.s:src_dir_info.get_contained_file_info('types.vim').path
 execute 'source '.s:src_dir_info.get_contained_file_info('File.vim').path
 execute 'source '.s:src_dir_info.get_contained_file_info('Shell_cmd_saver.vim').path
 execute 'source '.s:src_dir_info.get_contained_file_info('Shell.vim').path
+
+let g:elhiv_dir_path= s:elhiv_dir_info.path
