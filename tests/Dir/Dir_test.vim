@@ -7,7 +7,7 @@ endfunction
 function! s:Test_can_be_root()
 	let dir= Dir('/')
 	AssertEquals('/', dir.path)
-	Assert dir.exists
+	Assert dir.get_exists()
 endfunction
 
 function! s:Test_parent()
@@ -51,11 +51,11 @@ function! s:Test_parent_is_dot()
 endfunction
 
 function! s:Test_empty_dir_not_exists()
-	AssertEquals(0, Dir('').exists)
+	Assert !Dir('').get_exists()
 endfunction
 
 function! s:Test_home_dir_exists()
-	AssertEquals(1, Dir('/home').exists)
+	Assert Dir('/home').get_exists()
 endfunction
 
 function! s:Test_contained_dir_has_correct_path()
