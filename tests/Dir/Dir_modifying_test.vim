@@ -40,10 +40,10 @@ function! s:Test_copy_empty_dir_and_delete()
 	let copy= s:after_dir.get_contained_dir('empty dir')
 	Assert !copy.exists
 	call s:empty_dir.copy_to(copy)
-	let copy= s:after_dir.get_contained_dir('empty dir')
+	let copy= Dir(copy.path)
 	Assert copy.exists
 	call copy.delete()
-	let copy= s:after_dir.get_contained_dir('empty dir')
+	let copy= Dir(copy.path)
 	Assert !copy.exists
 endfunction
 
