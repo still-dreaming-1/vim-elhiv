@@ -21,7 +21,6 @@ endfunction
 
 function! s:Test_create_recursive_no_recursion_and_delete()
 	let new_dir= s:after_dir.get_contained_dir('new_dir')
-	AssertDiffers(Null(), new_dir)
 	Assert !new_dir.exists
 	call new_dir.create_recursive()
 	let new_dir= s:after_dir.get_contained_dir('new_dir')
