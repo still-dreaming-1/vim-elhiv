@@ -33,5 +33,9 @@ function! Dir(path)
 		endif
 	endfunction
 
+	function! dir.delete()
+		call self._shell.run('rmdir "'.self.path.'"')
+	endfunction
+
 	return dir
 endfunction
