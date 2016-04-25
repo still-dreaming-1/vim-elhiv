@@ -1,13 +1,8 @@
 UTSuite Dir_modifying
 
 function! s:Setup()
-	let dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	let dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
 	Assert dir.exists
-	let data_dir= dir.get_contained_dir('data')
-	Assert !data_dir.exists
-	call data_dir.create_recursive()
-	let data_dir= dir.get_contained_dir('data')
-	Assert data_dir.exists
 	let s:before_dir= data_dir.get_contained_dir('before')
 	Assert !s:before_dir.exists
 	call s:before_dir.create_recursive()
