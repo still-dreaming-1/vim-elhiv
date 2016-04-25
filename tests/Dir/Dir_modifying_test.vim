@@ -20,6 +20,22 @@ function! s:Setup()
 	Assert s:after_dir.exists
 endfunction
 
+function! s:Teardown()
+	let dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
+	Assert dir.exists
+	let s:before_dir= Dir(s:before_dir.path)
+	Assert s:before_dir.exists
+	call s:before_dir.delete()
+	let s:before_dir= Dir(s:before_dir.path)
+	Assert !s:before_dir.exists
+
+	let s:after_dir= Dir(s:after_dir.path)
+	Assert s:after_dir.exists
+	call s:after_dir.delete()
+	let s:after_dir= Dir(s:after_dir.path)
+	Assert !s:after_dir.exists
+endfunction
+
 function! s:Test_copy_empty_dir_and_delete()
 	let copy= s:after_dir.get_contained_dir('empty dir')
 	Assert !copy.exists

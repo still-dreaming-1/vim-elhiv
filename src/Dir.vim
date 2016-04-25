@@ -34,7 +34,7 @@ function! Dir(path)
 	endfunction
 
 	function! dir.delete()
-		call self._shell.run('rmdir "'.self.path.'"')
+		call self._shell.run('rm -rf "'.self.path.'"')
 	endfunction
 
 	return dir
