@@ -10,7 +10,7 @@ function! s:Setup()
 	Assert s:before_dir.exists
 	let s:empty_dir= s:before_dir.get_contained_dir('empty dir')
 	Assert !s:empty_dir.exists
-	s:empty_dir.create_recursive()
+	call s:empty_dir.create_recursive()
 	let s:empty_dir= Dir(s:empty_dir.path)
 	Assert s:empty_dir.exists
 	let s:after_dir= dir.get_contained_dir('after')
