@@ -3,7 +3,7 @@ UTSuite Dir_modifying
 function! s:Setup()
 	let dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
 	Assert dir.exists
-	let s:before_dir= data_dir.get_contained_dir('before')
+	let s:before_dir= dir.get_contained_dir('before')
 	Assert !s:before_dir.exists
 	call s:before_dir.create_recursive()
 	let s:before_dir= Dir(s:before_dir.path)
@@ -13,7 +13,7 @@ function! s:Setup()
 	s:empty_dir.create_recursive()
 	let s:empty_dir= Dir(s:empty_dir.path)
 	Assert s:empty_dir.exists
-	let s:after_dir= data_dir.get_contained_dir('after')
+	let s:after_dir= dir.get_contained_dir('after')
 	Assert !s:after_dir.exists
 	call s:after_dir.create_recursive()
 	let s:after_dir= Dir(s:after_dir.path)
