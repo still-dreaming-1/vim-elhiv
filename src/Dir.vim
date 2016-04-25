@@ -5,6 +5,10 @@ function! Dir(path)
 	let dir.exists= info.exists
 	let dir._shell= Shell()
 
+	function! dir.get_exists()
+		return l_dir_info#new(self.path).exists
+	endfunction
+
 	function! dir.parent()
 		let parent_info= l_dir_info#new(self.path).parent()
 		if parent_info == Null()
