@@ -32,7 +32,7 @@ function! Dir(path)
 	endfunction
 	
 	function! dir.copy_to(dir)
-		if !a:dir.exists
+		if !a:dir.get_exists()
 			call a:dir.create_recursive()
 		endif
 	endfunction
