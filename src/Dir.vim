@@ -1,7 +1,6 @@
 function! Dir(path)
-	let info= l_dir_info#new(a:path)
 	let dir= {}
-	let dir.path= info.path
+	let dir.path= a:path
 	let dir._shell= Shell()
 
 	function! dir.get_exists()
