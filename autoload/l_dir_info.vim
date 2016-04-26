@@ -19,5 +19,9 @@ function! l_dir_info#new(path)
 		return l_file_info#new(self.path.'/'.a:name)
 	endfunction
 
+	function! dir.get_all_file_info()
+		return []
+	endfunction
+
 	return dir
 endfunction
