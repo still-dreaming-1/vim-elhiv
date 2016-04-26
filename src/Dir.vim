@@ -3,7 +3,7 @@ function! Dir(path)
 	let dir.path= a:path
 	let dir._shell= Shell()
 
-	function! dir.get_exists()
+	function! dir.exists()
 		return l_dir_info#new(self.path).exists
 	endfunction
 
@@ -30,7 +30,7 @@ function! Dir(path)
 	endfunction
 	
 	function! dir.copy_to(dir)
-		if !a:dir.get_exists()
+		if !a:dir.exists()
 			call a:dir.create_recursive()
 		endif
 	endfunction
