@@ -7,9 +7,11 @@ function! File(path)
 	endfunction
 
 	function! file.create()
+		call Shell().run('touch "'.self.path.'"')
 	endfunction
 
 	function! file.delete()
+		call Shell().run('rm "'.self.path.'"')
 	endfunction
 
 	return file

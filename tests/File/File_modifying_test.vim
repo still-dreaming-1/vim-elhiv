@@ -6,4 +6,6 @@ function! s:Test_create_and_delete()
 	Assert !file.readable()
 	call file.create()
 	Assert file.readable()
+	call file.delete()
+	Assert !file.readable()
 endfunction
