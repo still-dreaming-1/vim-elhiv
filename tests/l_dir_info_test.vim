@@ -47,7 +47,6 @@ endfunction
 function! s:Test_get_all_file_info_when_empty_dir()
 	let empty_dir_info= l_dir_info#new(s:empty_dir.path)
 	let file_info= empty_dir_info.get_contained_file_info('i am a file')
-	" echo empty_dir_info
-	" let all_file_info= empty_dir_info.get_all_f_info('param')
+	let all_file_info= empty_dir_info.get_all_file_info('param')
 	Assert 1
 endfunction
