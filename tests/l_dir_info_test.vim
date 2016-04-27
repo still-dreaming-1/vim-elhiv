@@ -4,6 +4,7 @@ function! s:create_script_vars()
 	let s:data_dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
 	let s:before_dir= s:data_dir.get_contained_dir('before')
 	let s:empty_dir= s:before_dir.get_contained_dir('empty dir')
+	let s:dir_with_1_file= s:before_dir.get_contained_dir('dir with 1 file')
 	let s:after_dir= s:data_dir.get_contained_dir('after')
 endfunction
 
@@ -17,6 +18,9 @@ function! s:Setup()
 	Assert !s:empty_dir.exists()
 	call s:empty_dir.create_recursive()
 	Assert s:empty_dir.exists()
+	Assert !s:dir_with_1_file.exists()
+	call s:dir_with_1_file.create_recursive()
+	Assert s:dir_with_1_file.exists()
 	Assert !s:after_dir.exists()
 	call s:after_dir.create_recursive()
 	Assert s:after_dir.exists()
@@ -48,4 +52,8 @@ function! s:Test_get_all_file_info_when_empty_dir()
 	let empty_dir_info= l_dir_info#new(s:empty_dir.path)
 	let all_file_info= empty_dir_info.get_all_file_info()
 	AssertEquals([], all_file_info)
+endfunction
+
+function! s:Test_get_all_file_info_when_contains_one_file()
+	Assert 1
 endfunction
