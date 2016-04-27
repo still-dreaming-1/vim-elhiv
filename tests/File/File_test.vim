@@ -6,5 +6,5 @@ endfunction
 
 function! s:Test_non_existent_file_not_readable()
 	let file= File('/home/i_am_pretty_sure_this_file_exists.not')
-	Assert !file.readable
+	Assert !file.readable()
 endfunction

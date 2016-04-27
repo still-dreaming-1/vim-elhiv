@@ -1,8 +1,10 @@
 function! File(path)
-	let file_info= l_file_info#new(a:path)
 	let file= {}
-	let file.path= file_info.path
-	let file.readable= file_info.readable
+	let file.path= a:path
+
+	function! file.readable()
+		return l_file_info#new(self.path).readable
+	endfunction
 
 	function! file.create()
 	endfunction
