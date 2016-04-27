@@ -47,5 +47,5 @@ endfunction
 function! s:Test_get_all_file_info_when_empty_dir()
 	let empty_dir_info= l_dir_info#new(s:empty_dir.path)
 	let all_file_info= empty_dir_info.get_all_file_info()
-	Assert 1
+	AssertEquals([], all_file_info)
 endfunction
