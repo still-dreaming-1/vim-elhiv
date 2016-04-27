@@ -25,13 +25,13 @@ function! Dir(path)
 		return File(contained_info.path)
 	endfunction
 
-	function! dir.recursive()
+	function! dir.create()
 		call self._shell.run('mkdir "'.self.path.'"')
 	endfunction
 	
 	function! dir.copy_to(dir)
 		if !a:dir.exists()
-			call a:dir.recursive()
+			call a:dir.create()
 		endif
 	endfunction
 
