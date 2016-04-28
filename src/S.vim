@@ -1,6 +1,7 @@
 function! S(str)
 	let s= {}
 	let s.str= a:str
+	let s.len= len(s.str)
 
 	function! s.ridx(needle, ...)
 		if a:0 > 0

@@ -5,6 +5,21 @@ function! s:Test_str()
 	AssertEquals('hello', s.str)
 endfunction
 
+function! s:Test_len_of_empty_string_is_0()
+	let s= S('')
+	AssertEquals(0, s.len)
+endfunction
+
+function! s:Test_len_of_string_with_1_char()
+	let s= S('d')
+	AssertEquals(1, s.len)
+endfunction
+
+function! s:Test_len_of_longer_string()
+	let s= S('I am a 27 character string!')
+	AssertEquals(27, s.len)
+endfunction
+
 function! s:Test_ridx()
 	let s= S(';ok;there')
 	AssertEquals(3, s.ridx(';'))
