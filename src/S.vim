@@ -31,5 +31,12 @@ function! S(str)
 		return s_dic ==# my_s_dic
 	endfunction
 
+	function! s.remove_end()
+		if self.len <= 1
+			return ''
+		endif
+		return self.str[0 : self.len - 2]
+	endfunction
+
 	return s
 endfunction
