@@ -74,13 +74,13 @@ function! s:Test_not_ends_with_last_char_when_different_capitalization()
 endfunction
 
 function! s:Test_remove_end_of_single_char_string()
-	AssertEquals('', S('a').remove_end())
+	AssertEquals('', S('a').remove_end().str)
 endfunction
 
 function! s:Test_remove_end_of_2_char_string()
-	AssertEquals('a', S('ab').remove_end())
+	AssertEquals('a', S('ab').remove_end().str)
 endfunction
 
 function! s:Test_remove_end_of_3_char_string()
-	AssertEquals('xy', S('xyz').remove_end())
+	AssertEquals('xy', S('xyz').remove_end().str)
 endfunction

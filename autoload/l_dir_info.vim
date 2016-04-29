@@ -20,7 +20,14 @@ function! l_dir_info#new(path)
 	endfunction
 
 	function! dir.get_all_file_info()
-		let out= Shell().run('find "'.self.path.'" -maxdepth 1 -type f')
+		let out= S(Shell().run('find "'.self.path.'" -maxdepth 1 -type f'))
+		if out.starts_with(self.path.'/')
+			let file_name= S(out.str[len(self.path) + 1 : ])
+			if file_name.ends_with("\n")
+				let file_name= file_name.remove_end()
+			endif
+			return [ self.get_contained_file_info(file_name.str) ]
+		endif
 		return []
 	endfunction
 

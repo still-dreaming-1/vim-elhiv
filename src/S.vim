@@ -33,9 +33,9 @@ function! S(str)
 
 	function! s.remove_end()
 		if self.len <= 1
-			return ''
+			return S('')
 		endif
-		return self.str[0 : self.len - 2]
+		return S(self.str[0 : self.len - 2])
 	endfunction
 
 	return s

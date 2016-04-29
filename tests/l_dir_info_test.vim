@@ -61,8 +61,6 @@ endfunction
 function! s:Test_get_all_file_info_when_contains_one_file()
 	let dir_info= l_dir_info#new(s:dir_with_1_file.path)
 	let all_file_info= dir_info.get_all_file_info()
-	" this is the expected output from the shell command that ran in that method:
-	" /home/jesse/.config/nvim/plugged/vim-elhiv/tests/Dir/data/before/dir with 1 file/file
-	" there could also be more lines with more files below that in the output
 	AssertEquals(1, len(all_file_info))
+	AssertEquals(all_file_info[0].path, s:dir_with_1_file.path.'/file')
 endfunction
