@@ -5,6 +5,7 @@ function! s:create_script_vars()
 	let s:before_dir= s:data_dir.get_contained_dir('before')
 	let s:empty_dir= s:before_dir.get_contained_dir('empty dir')
 	let s:dir_with_1_file= s:before_dir.get_contained_dir('dir with 1 file')
+	let s:dir_with_2_files= s:before_dir.get_contained_dir('dir with 2 files')
 	let s:after_dir= s:data_dir.get_contained_dir('after')
 endfunction
 
@@ -22,6 +23,17 @@ function! s:Setup()
 	call s:dir_with_1_file.create()
 	Assert s:dir_with_1_file.exists()
 	let file= s:dir_with_1_file.get_contained_file('file')
+	Assert !file.readable()
+	call file.create()
+	Assert file.readable()
+	Assert !s:dir_with_2_files.exists()
+	call s:dir_with_2_files.create()
+	Assert s:dir_with_2_files.exists()
+	let file= s:dir_with_2_files.get_contained_file('first fl')
+	Assert !file.readable()
+	call file.create()
+	Assert file.readable()
+	let file= s:dir_with_2_files.get_contained_file('second fl')
 	Assert !file.readable()
 	call file.create()
 	Assert file.readable()
@@ -64,4 +76,8 @@ function! s:Test_get_all_file_info_when_contains_one_file()
 	AssertEquals(1, len(all_file_info))
 	AssertEquals(all_file_info[0].path, s:dir_with_1_file.path.'/file')
 	Assert all_file_info[0].readable
+endfunction
+
+function! s:Test_get_all_file_info_when_contains_two_files()
+	Assert 1
 endfunction
