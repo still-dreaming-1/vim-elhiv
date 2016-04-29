@@ -63,4 +63,5 @@ function! s:Test_get_all_file_info_when_contains_one_file()
 	let all_file_info= dir_info.get_all_file_info()
 	AssertEquals(1, len(all_file_info))
 	AssertEquals(all_file_info[0].path, s:dir_with_1_file.path.'/file')
+	Assert all_file_info[0].readable
 endfunction
