@@ -25,8 +25,36 @@ function! s:Test_ridx()
 	AssertEquals(3, s.ridx(';'))
 endfunction
 
-function! s:Test_not_ends_with()
+function! s:Test_not_starts_with_ending()
+	Assert !S('one').starts_with('e')
+endfunction
+
+function! s:Test_not_starts_with_longer_string()
+	Assert !S('same').starts_with('same I am longer than you')
+endfunction
+
+function! s:Test_starts_with_self()
+	Assert S('one').starts_with('one')
+endfunction
+
+function! s:Test_starts_with_first_2_chars()
+	Assert S('one').starts_with('on')
+endfunction
+
+function! s:Test_starts_with_first_char()
+	Assert S('one').starts_with('o')
+endfunction
+
+function! s:Test_not_starts_with_first_char_when_different_capitalization()
+	Assert !S('one').starts_with('O')
+endfunction
+
+function! s:Test_not_ends_with_start()
 	Assert !S('one').ends_with('on')
+endfunction
+
+function! s:Test_not_ends_with_longer_string()
+	Assert !S('same').starts_with('I am longer than you same')
 endfunction
 
 function! s:Test_ends_with_self()
