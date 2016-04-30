@@ -79,5 +79,11 @@ function! s:Test_get_all_file_info_when_contains_one_file()
 endfunction
 
 function! s:Test_get_all_file_info_when_contains_two_files()
-	Assert 1
+	let dir_info= l_dir_info#new(s:dir_with_2_files.path)
+	let all_file_info= dir_info.get_all_file_info()
+	AssertEquals(2, len(all_file_info))
+	AssertEquals(all_file_info[0].path, s:dir_with_2_files.path.'/first fl')
+	Assert all_file_info[0].readable
+	AssertEquals(all_file_info[1].path, s:dir_with_2_files.path.'/second fl')
+	Assert all_file_info[1].readable
 endfunction
