@@ -1,5 +1,4 @@
-" source this file in order to have access to the library. This file sources the other classes and functions in the library. Some classes are defined here
-" because they are used to find the correct path to source for the other library files.
+" source this file in order to have access to the library. This file sources the other classes and functions in the library.
 
 let s:current_script_path= expand('<sfile>')
 let s:elhiv_dir_info= l_dir_info#new(s:current_script_path).parent()
