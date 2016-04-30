@@ -20,12 +20,12 @@ function! l_dir_info#new(path)
 	endfunction
 
 	function! dir.get_all_file_info()
-		let out= S(l_shell#new().run('find "'.self.path.'" -maxdepth 1 -type f'))
+		let out= l_s#new(l_shell#new().run('find "'.self.path.'" -maxdepth 1 -type f'))
 		let path_list= split(out.str, "\n")
 		let my_path= self.path.'/'
 		let all_file_info= []
 		for file_path in path_list
-			if !S(file_path).starts_with(my_path)
+			if !l_s#new(file_path).starts_with(my_path)
 				return []
 			endif
 			call add(all_file_info, l_file_info#new(file_path))
