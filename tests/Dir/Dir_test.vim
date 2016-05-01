@@ -69,3 +69,15 @@ function! s:Test_contained_file_has_correct_path()
 	let contained_file= dir.get_contained_file('myfile.txt')
 	AssertEquals('/some_dir/myfile.txt', contained_file.path)
 endfunction
+
+function! s:Test_not_subdir_of_non_existent_dir()
+	let mom= Dir('mommy')
+	let baby= mom.get_contained_dir('baby')
+	Assert !baby.is_subdir_of(mom)
+endfunction
+
+function! s:Test_non_existent_dir_not_has_subdir()
+	let mom= Dir('mommy')
+	let baby= mom.get_contained_dir('baby')
+	Assert !mom.has_subdir(baby)
+endfunction

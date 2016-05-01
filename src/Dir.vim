@@ -39,5 +39,13 @@ function! Dir(path)
 		call self._shell.run('rm -rf "'.self.path.'"')
 	endfunction
 
+	function! dir.is_subdir_of(dir)
+		return 0
+	endfunction
+
+	function! dir.has_subdir(dir)
+		return 0
+	endfunction
+
 	return dir
 endfunction
