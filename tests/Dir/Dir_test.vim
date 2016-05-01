@@ -97,3 +97,23 @@ function! s:Test_parent_not_has_subdir_when_parent_contains_no_dirs()
 	Assert !child.exists()
 	Assert !parent.has_subdir(child)
 endfunction
+
+function! s:Test_child_not_subdir_of_parent_when_parent_only_contains_other_children()
+	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	Assert parent.exists()
+	let non_existent_child= parent.get_contained_dir('I do not exist')
+	Assert !non_existent_child.exists()
+	let real_child= parent.get_contained_dir('data')
+	Assert real_child.exists()
+	Assert !non_existent_child.is_subdir_of(parent)
+endfunction
+
+function! s:Test_parent_not_has_subdir_when_only_has_other_children()
+	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	Assert parent.exists()
+	let non_existent_child= parent.get_contained_dir('I do not exist')
+	Assert !non_existent_child.exists()
+	let real_child= parent.get_contained_dir('data')
+	Assert real_child.exists()
+	Assert !parent.has_subdir(non_existent_child)
+endfunction
