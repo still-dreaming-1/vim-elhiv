@@ -40,10 +40,19 @@ function! Dir(path)
 	endfunction
 
 	function! dir.is_subdir_of(dir)
-		return 0
+		return a:dir.has_subdir(self)
 	endfunction
 
 	function! dir.has_subdir(dir)
+		if !self.exists()
+			return 0
+		endif
+		if !a:dir.exists()
+			return 0
+		endif
+		if S(a:dir.path).starts_with(self.path)
+			return 1
+		endif
 		return 0
 	endfunction
 
