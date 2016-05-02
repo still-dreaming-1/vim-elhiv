@@ -6,6 +6,14 @@ function! File(path)
 		return l_file_info#new(self.path).readable
 	endfunction
 
+	function! file.writable()
+		let writable= filewritable(self.path)
+		if writable == 1
+			return 1
+		endif
+		return 0
+	endfunction
+
 	function! file.create()
 		call Shell().run('touch "'.self.path.'"')
 	endfunction
