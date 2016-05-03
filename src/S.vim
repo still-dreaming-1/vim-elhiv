@@ -11,5 +11,9 @@ function! S(str)
 		return s_dic ==# my_s_dic
 	endfunction
 
+	function! s.escape(chars)
+		return escape(self.str, a:chars)
+	endfunction
+
 	return s
 endfunction
