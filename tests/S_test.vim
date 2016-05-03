@@ -85,6 +85,10 @@ function! s:Test_remove_end_of_3_char_string()
 	AssertEquals('xy', S('xyz').remove_end().str)
 endfunction
 
-function! s:Test_escape()
+function! s:Test_escape_space()
 	AssertEquals('\ ', S(' ').escape(' '))
+endfunction
+
+function! s:Test_escape_space_between_two_words()
+	AssertEquals('some\ name', S('some name').escape(' '))
 endfunction
