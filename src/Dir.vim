@@ -25,6 +25,15 @@ function! Dir(path)
 		return File(contained_info.path)
 	endfunction
 
+	function! dir.get_all_files()
+		let all_files= []
+		let all_file_info= l_dir_info#new(self.path).get_all_file_info()
+		for file_info in all_file_info
+			call add(all_files, File(file_info.path))
+		endfor
+		return all_files
+	endfunction
+
 	function! dir.create()
 		call self._shell.run('mkdir "'.self.path.'"')
 	endfunction
