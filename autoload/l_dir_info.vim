@@ -20,7 +20,7 @@ function! l_dir_info#new(path)
 	endfunction
 
 	function! dir.get_all_file_info()
-		let out= l_s#new(l_shell#new().run('find "'.self.path.'" -maxdepth 1 -type f'))
+		let out= l_s#new(l_shell#new().run('find '.shellescape(self.path).' -maxdepth 1 -type f'))
 		let path_list= split(out.str, "\n")
 		let my_path= self.path.'/'
 		let all_file_info= []
