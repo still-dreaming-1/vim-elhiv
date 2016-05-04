@@ -35,7 +35,7 @@ function! Dir(path)
 	endfunction
 
 	function! dir.create()
-		call self._shell.run('mkdir "'.self.path.'"')
+		call self._shell.run('mkdir '.shellescape(self.path))
 	endfunction
 	
 	function! dir.copy_to(dir)
@@ -45,7 +45,7 @@ function! Dir(path)
 	endfunction
 
 	function! dir.delete()
-		call self._shell.run('rm -rf "'.self.path.'"')
+		call self._shell.run('rm -rf '.shellescape(self.path))
 	endfunction
 
 	function! dir.is_subdir_of(dir)

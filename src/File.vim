@@ -15,15 +15,15 @@ function! File(path)
 	endfunction
 
 	function! file.create()
-		call Shell().run('touch "'.self.path.'"')
+		call Shell().run('touch '.shellescape(self.path))
 	endfunction
 
 	function! file.delete()
-		call Shell().run('rm "'.self.path.'"')
+		call Shell().run('rm '.shellescape(self.path))
 	endfunction
 
 	function! file.copy_to(path)
-		call Shell().run('cp "'.self.path.'" "'.a:path.'"')
+		call Shell().run('cp '.shellescape(self.path).' '.shellescape(a:path))
 	endfunction
 
 	function! file.edit()
