@@ -22,6 +22,10 @@ function! File(path)
 		call Shell().run('rm "'.self.path.'"')
 	endfunction
 
+	function! file.copy_to(path)
+		call Shell().run('cp "'.self.path.'" "'.a:path.'"')
+	endfunction
+
 	function! file.edit()
 		let editable_path= S(self.path).escape(' ')
 		execute "e ".editable_path
