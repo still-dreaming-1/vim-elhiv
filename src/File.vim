@@ -27,8 +27,7 @@ function! File(path)
 	endfunction
 
 	function! file.edit()
-		let editable_path= fnameescape(self.path)
-		execute "e ".editable_path
+		execute "e ".fnameescape(self.path)
 	endfunction
 
 	return file
