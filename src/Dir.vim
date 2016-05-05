@@ -34,6 +34,10 @@ function! Dir(path)
 		return all_files
 	endfunction
 
+	function! dir.get_files_with_extension_recursive(extension)
+		return []
+	endfunction
+
 	function! dir.create()
 		call self._shell.run('mkdir '.shellescape(self.path))
 	endfunction
