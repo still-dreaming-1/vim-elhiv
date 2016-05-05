@@ -30,5 +30,9 @@ function! File(path)
 		execute "e ".fnameescape(self.path)
 	endfunction
 
+	function! file.source()
+		execute "source ".fnameescape(self.path)
+	endfunction
+
 	return file
 endfunction
