@@ -27,3 +27,12 @@ function! s:Test_copy_and_delete()
 	call file_copy.delete()
 	Assert !file_copy.readable()
 endfunction
+
+function! s:Test_no_files_with_file_extensions()
+	let txt_files= s:dir.get_files_with_extension_recursive('txt')
+	AssertEquals(0, len(txt_files))
+	let php_files= s:dir.get_files_with_extension_recursive('php')
+	AssertEquals(0, len(php_files))
+	let js_files= s:dir.get_files_with_extension_recursive('js')
+	AssertEquals(0, len(js_files))
+endfunction
