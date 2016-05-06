@@ -1,15 +1,20 @@
 UTSuite File modifying when directory has one file with no file extension
 
 function! s:Setup()
-	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/File/data')
+	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/File/data/generated')
+	Assert !s:dir.exists()
+	call s:dir.create()
+	Assert s:dir.exists()
 	let s:file= s:dir.get_contained_file('file')
 	Assert !s:file.readable()
+	Assert !s:file.writable()
 	call s:file.create()
 	Assert s:file.readable()
 endfunction
 
 function! s:Teardown()
-	call s:file.delete()
+	call s:dir.delete()
+	Assert !s:dir.exists()
 	Assert !s:file.readable()
 	Assert !s:file.writable()
 endfunction
