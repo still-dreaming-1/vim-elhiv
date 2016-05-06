@@ -1,4 +1,4 @@
-UTSuite File modifying when directory has one file with no file extension
+UTSuite modifying when directory has one file with no file extension
 
 function! s:Setup()
 	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/modifying/data')
