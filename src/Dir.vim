@@ -38,6 +38,14 @@ function! Dir(path)
 		return self.get_all_files()
 	endfunction
 
+	function! dir.get_all_dirs()
+		return []
+	endfunction
+
+	function! dir.get_all_dirs_recursive()
+		return self.get_all_dirs()
+	endfunction
+
 	function! dir.get_files_with_extension_recursive(extension)
 		let all_files= self.get_all_files_recursive()
 		let all_files_with_extension= []
