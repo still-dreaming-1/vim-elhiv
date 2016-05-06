@@ -31,6 +31,7 @@ endfunction
 function! s:Test_1_file_with_txt_file_extensions()
 	let txt_files= s:dir.get_files_with_extension_recursive('txt')
 	AssertEquals(1, len(txt_files))
+	AssertEquals(s:file.path, txt_files[0].path)
 endfunction
 
 function! s:Test_no_files_with_other_file_extensions()
