@@ -27,11 +27,11 @@ function! s:Teardown()
 endfunction
 
 function! s:Test_2_files_with_js_file_extensions()
-	let txt_files= s:dir.get_files_with_extension_recursive('js')
-	AssertEquals(2, len(txt_files))
-	Assert txt_files[0].path ==# s:file.path || txt_files[1].path ==# s:file.path
-	Assert txt_files[0].path ==# s:second_file.path || txt_files[1].path ==# s:second_file.path
-	AssertDiffers(txt_files[0].path, txt_files[1].path)
+	let js_files= s:dir.get_files_with_extension_recursive('js')
+	AssertEquals(2, len(js_files))
+	Assert js_files[0].path ==# s:file.path || js_files[1].path ==# s:file.path
+	Assert js_files[0].path ==# s:second_file.path || js_files[1].path ==# s:second_file.path
+	AssertDiffers(js_files[0].path, js_files[1].path)
 endfunction
 
 function! s:Test_no_files_with_other_file_extensions()
