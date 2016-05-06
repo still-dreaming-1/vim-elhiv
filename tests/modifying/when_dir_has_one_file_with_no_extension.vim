@@ -1,7 +1,7 @@
 UTSuite File modifying when directory has one file with no file extension
 
 function! s:Setup()
-	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/File/data/generated')
+	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/modifying/data')
 	Assert !s:dir.exists()
 	call s:dir.create()
 	Assert s:dir.exists()
@@ -35,4 +35,9 @@ function! s:Test_no_files_with_file_extensions()
 	AssertEquals(0, len(php_files))
 	let js_files= s:dir.get_files_with_extension_recursive('js')
 	AssertEquals(0, len(js_files))
+endfunction
+
+function! s:Test_no_matching_file_extension_when_missing_dot()
+	let files= s:dir.get_files_with_extension_recursive('ile')
+	AssertEquals(0, len(files))
 endfunction

@@ -35,7 +35,14 @@ function! Dir(path)
 	endfunction
 
 	function! dir.get_files_with_extension_recursive(extension)
-		return []
+		let all_files= self.get_all_files()
+		let all_files_with_extension= []
+		for file in all_files
+			if S(file.path).ends_with('.'.a:extension)
+				call add(all_files_with_extension, file)
+			endif
+		endfor
+		return all_files_with_extension
 	endfunction
 
 	function! dir.create()
