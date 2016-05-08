@@ -1,6 +1,14 @@
 function! File(path)
 	let file= {}
 	let file.path= a:path
+	let file.extension= ''
+	let ext_start_i= S(file.path).ridx('.')
+	if ext_start_i != -1
+		let ext_start_i += 1
+		if len(file.path) > ext_start_i
+			let file.extension= file.path[ext_start_i : ]
+		endif
+	endif
 
 	function! file.readable()
 		return l_file_info#new(self.path).readable
