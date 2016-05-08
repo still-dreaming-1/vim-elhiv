@@ -41,3 +41,8 @@ function! s:Test_no_matching_file_extension_when_missing_dot()
 	let files= s:dir.get_files_with_extension_recursive('ile')
 	AssertEquals(0, len(files))
 endfunction
+
+function! s:Test_contains_no_dirs()
+	let dirs= s:dir.get_all_dirs()
+	AssertEquals(0, len(dirs))
+endfunction

@@ -40,3 +40,8 @@ function! s:Test_no_files_with_other_file_extensions()
 	let js_files= s:dir.get_files_with_extension_recursive('txt')
 	AssertEquals(0, len(js_files))
 endfunction
+
+function! s:Test_contains_no_dirs()
+	let dirs= s:dir.get_all_dirs()
+	AssertEquals(0, len(dirs))
+endfunction

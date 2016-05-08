@@ -1,24 +1,34 @@
 UTSuite modifying test when directory has 1 file with an exension it has another directory with 1 file with the same extension
 
-function! s:Setup()
+function! s:create_script_vars()
 	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/modifying/data')
+	let s:file= s:dir.get_contained_file('file.js')
+	let s:sub_dir= s:dir.get_contained_dir('sub dir')
+	let s:sub_file= s:sub_dir.get_contained_file('sub_file.js')
+endfunction
+
+function! s:Setup()
+	call s:safe_teardown()
+	call s:create_script_vars()
 	Assert !s:dir.exists()
 	call s:dir.create()
 	Assert s:dir.exists()
-	let s:file= s:dir.get_contained_file('file.js')
 	Assert !s:file.readable()
 	Assert !s:file.writable()
 	call s:file.create()
 	Assert s:file.readable()
-	let s:sub_dir= s:dir.get_contained_dir('sub dir')
 	Assert !s:sub_dir.exists()
 	call s:sub_dir.create()
 	Assert s:sub_dir.exists()
-	let s:sub_file= s:sub_dir.get_contained_file('sub_file.js')
 	Assert !s:sub_file.readable()
 	Assert !s:sub_file.writable()
 	call s:sub_file.create()
 	Assert s:sub_file.readable()
+endfunction
+
+function! s:safe_teardown()
+	call s:create_script_vars()
+	call s:dir.delete()
 endfunction
 
 function! s:Teardown()
@@ -56,4 +66,10 @@ function! s:Test_no_files_with_other_file_extensions()
 	AssertEquals(0, len(php_files))
 	let js_files= s:dir.get_files_with_extension_recursive('txt')
 	AssertEquals(0, len(js_files))
+endfunction
+
+function! s:Test_contains_1_dir()
+	let dirs= s:dir.get_all_dirs()
+	AssertEquals(1, len(dirs))
+	AssertEquals(s:sub_dir.path, dirs[0].path)
 endfunction

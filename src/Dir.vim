@@ -39,7 +39,17 @@ function! Dir(path)
 	endfunction
 
 	function! dir.get_all_dirs()
-		return []
+		let all_dir_list= []
+		let shell= Shell()
+		let out= S(shell.run('find '.shellescape(self.path).' -maxdepth 1 -type d'))
+		let path_list= split(out.str, "\n")
+		let my_path= self.path.'/'
+		for dir_path in path_list
+			if dir_path !=# my_path && S(dir_path).starts_with(my_path)
+				call add(all_dir_list, Dir(dir_path))
+			endif
+		endfor
+		return all_dir_list
 	endfunction
 
 	function! dir.get_all_dirs_recursive()
