@@ -3,6 +3,7 @@ function! l_s#new(str)
 	let s.str= a:str
 	let s.len= len(s.str)
 
+	" returns -1 or index
 	function! s.ridx(needle, ...)
 		if a:0 > 0
 			let start= a:1
