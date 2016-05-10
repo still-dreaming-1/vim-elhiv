@@ -35,7 +35,15 @@ function! Dir(path)
 	endfunction
 
 	function! dir.get_all_files_recursive()
-		return self.get_all_files()
+		let all_files_recursive= []
+		let all_dirs= self.get_all_dirs_recursive()
+		for dir in all_dirs
+			let all_files= dir.get_all_files()
+			for file in all_files
+				call add(file, all_files_recursive)
+			endfor
+		endfor
+		return all_files_recursive
 	endfunction
 
 	function! dir.get_all_dirs()
