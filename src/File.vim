@@ -42,5 +42,9 @@ function! File(path)
 		execute "source ".fnameescape(self.path)
 	endfunction
 
+	function! file.size()
+		return getfsize(self.path)
+	endfunction
+
 	return file
 endfunction

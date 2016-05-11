@@ -1,7 +1,7 @@
-UTSuite modifying test when directory has 2 files and 1 of them has a file extension
+UTSuite integration test when directory has 2 files and 1 of them has a file extension
 
 function! s:Setup()
-	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/modifying/data')
+	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/integration/data')
 	Assert !s:dir.exists()
 	call s:dir.create()
 	Assert s:dir.exists()
@@ -57,4 +57,9 @@ function! s:Test_contains_no_dirs()
 
 	let dirs= s:dir.get_all_dirs_recursive()
 	AssertEquals(0, len(dirs))
+endfunction
+
+function! s:Test_files_are_empty()
+	AssertEquals(0, s:file.size())
+	AssertEquals(0, s:second_file.size())
 endfunction

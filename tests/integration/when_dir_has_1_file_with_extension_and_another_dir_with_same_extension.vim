@@ -1,7 +1,7 @@
-UTSuite modifying test when directory has 1 file with an exension and it has another directory with 1 file with the same extension
+UTSuite integration test when directory has 1 file with an exension and it has another directory with 1 file with the same extension
 
 function! s:create_script_vars()
-	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/modifying/data')
+	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/integration/data')
 	let s:file= s:dir.get_contained_file('file.js')
 	let s:sub_dir= s:dir.get_contained_dir('sub dir')
 	let s:sub_file= s:sub_dir.get_contained_file('sub_file.js')
@@ -76,4 +76,9 @@ function! s:Test_contains_1_dir()
 	let dirs= s:dir.get_all_dirs_recursive()
 	AssertEquals(1, len(dirs))
 	AssertEquals(s:sub_dir.path, dirs[0].path)
+endfunction
+
+function! s:Test_files_are_empty()
+	AssertEquals(0, s:file.size())
+	AssertEquals(0, s:sub_file.size())
 endfunction
