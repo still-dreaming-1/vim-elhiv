@@ -1,4 +1,4 @@
-# vim-elhiv [![Join the chat at https://gitter.im/still-dreaming-1/vim-elhiv](https://badges.gitter.im/still-dreaming-1/vim-elhiv.svg)](https://gitter.im/still-dreaming-1/vim-elhiv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)[![Build Status](https://travis-ci.org/still-dreaming-1/vim-elhiv.svg?branch=master)](https://travis-ci.org/still-dreaming-1/vim-elhiv)
+# vim-elhiv [![Join the chat at https://gitter.im/still-dreaming-1/vim-elhiv](https://badges.gitter.im/still-dreaming-1/vim-elhiv.svg)](https://gitter.im/still-dreaming-1/vim-elhiv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This is a library written in VimL.
 
