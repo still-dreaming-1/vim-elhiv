@@ -44,4 +44,7 @@ endfunction
 function! s:Test_contains_no_dirs()
 	let dirs= s:dir.get_all_dirs()
 	AssertEquals(0, len(dirs))
+
+	let dirs= s:dir.get_all_dirs_recursive()
+	AssertEquals(0, len(dirs))
 endfunction

@@ -72,4 +72,8 @@ function! s:Test_contains_1_dir()
 	let dirs= s:dir.get_all_dirs()
 	AssertEquals(1, len(dirs))
 	AssertEquals(s:sub_dir.path, dirs[0].path)
+
+	let dirs= s:dir.get_all_dirs_recursive()
+	AssertEquals(1, len(dirs))
+	AssertEquals(s:sub_dir.path, dirs[0].path)
 endfunction
