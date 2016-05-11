@@ -82,3 +82,11 @@ function! s:Test_files_are_empty()
 	AssertEquals(0, s:file.size())
 	AssertEquals(0, s:sub_file.size())
 endfunction
+
+function! s:Test_sub_dir_contains_file_path_recursive_for_sub_file()
+	Assert s:sub_dir.contains_file_path_recursive(s:sub_file.path)
+endfunction
+
+function! s:Test_dir_contains_file_path_recursive_for_sub_file()
+	Assert s:dir.contains_file_path_recursive(s:sub_file.path)
+endfunction

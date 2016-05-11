@@ -25,6 +25,11 @@ function! Dir(path)
 		return File(contained_info.path)
 	endfunction
 
+	function! dir.contains_file_path_recursive(path)
+		let file= File(a:path)
+		return S(file.path).starts_with(self.path) && file.readable()
+	endfunction
+
 	function! dir.get_all_files()
 		let all_files= []
 		let all_file_info= l_dir_info#new(self.path).get_all_file_info()
