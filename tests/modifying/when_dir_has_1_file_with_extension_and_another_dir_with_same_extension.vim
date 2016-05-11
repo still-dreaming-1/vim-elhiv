@@ -1,4 +1,4 @@
-UTSuite modifying test when directory has 1 file with an exension it has another directory with 1 file with the same extension
+UTSuite modifying test when directory has 1 file with an exension and it has another directory with 1 file with the same extension
 
 function! s:create_script_vars()
 	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/modifying/data')
@@ -50,7 +50,7 @@ function! s:Test_contains_2_recursive_files()
 	let all_files= s:dir.get_all_files_recursive()
 	AssertEquals(2, len(all_files))
 	Assert s:file.path ==# all_files[0].path || s:file.path ==# all_files[1].path
-	Assert s:second_file.path ==# all_files[0].path || s:second_file.path ==# all_files[1].path
+	Assert s:sub_file.path ==# all_files[0].path || s:sub_file.path ==# all_files[1].path
 endfunction
 
 function! s:Test_2_files_with_js_file_extensions()

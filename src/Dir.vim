@@ -62,7 +62,13 @@ function! Dir(path)
 	endfunction
 
 	function! dir.get_all_dirs_recursive()
-		return self.get_all_dirs()
+		let all_dirs_recursive= []
+		let all_dirs= self.get_all_dirs()
+		call extend(all_dirs_recursive, all_dirs)
+		for dir in all_dirs
+			call extend(all_dirs_recursive, dir.get_all_dirs_recursive())
+		endfor
+		return all_dirs_recursive
 	endfunction
 
 	function! dir.get_files_with_extension_recursive(extension)
