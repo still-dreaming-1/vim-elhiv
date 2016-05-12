@@ -1,7 +1,0 @@
-language: vim
-before_script:
-    # Install vim-UT
-    - git clone https://github.com/LucHermitte/vim-UT
-    # install Neovim
-    - sudo apt-get install neovim
-    - sudo pip3 install neovim
