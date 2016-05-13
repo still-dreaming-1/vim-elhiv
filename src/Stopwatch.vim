@@ -5,6 +5,7 @@ function! Stopwatch()
 	let stopwatch.elapsed_milliseconds= -1
 
 	function! stopwatch.start()
+		" this might be a useful function here: reltime()
 		let self.start_time= -1
 	endfunction
 
