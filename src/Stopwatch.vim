@@ -11,6 +11,7 @@ function! Stopwatch()
 	function! stopwatch.stop()
 		let self.stop_time= -1
 		let self.elapsed_time= self.stop_time - self.start_time
+		return self.elapsed_time
 	endfunction
 
 	return stopwatch
