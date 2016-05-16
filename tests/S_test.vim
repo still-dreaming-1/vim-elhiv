@@ -113,6 +113,14 @@ function! s:Test_trim_space_from_beginning()
 	AssertEquals('yes', S(' yes').trim().str)
 endfunction
 
+function! s:Test_trim_line_feed_from_beginning()
+	AssertEquals('no', S("\nno").trim().str)
+endfunction
+
+function! s:Test_trim_line_feed_from_end()
+	AssertEquals('well', S("well\n").trim().str)
+endfunction
+
 function! s:Test_trim_2_spaces_from_beginning()
 	AssertEquals('watermellon', S('  watermellon').trim().str)
 endfunction
