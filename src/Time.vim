@@ -5,5 +5,6 @@ function! Time()
 	function! time.milliseconds_since_epoch()
 		return Shell().run('echo $(($(date +%s%N)/1000000))')
 	endfunction
+
 	return time
 endfunction
