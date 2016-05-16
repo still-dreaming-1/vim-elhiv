@@ -108,3 +108,47 @@ endfunction
 function! s:Test_remove_start_of_empty_str()
 	AssertEquals('', S('').remove_start().str)
 endfunction
+
+function! s:Test_trim_space_from_beginning()
+	AssertEquals('yes', S(' yes').trim().str)
+endfunction
+
+function! s:Test_trim_2_spaces_from_beginning()
+	AssertEquals('watermellon', S('  watermellon').trim().str)
+endfunction
+
+function! s:Test_trim_space_from_end()
+	AssertEquals('beef', S('beef ').trim().str)
+endfunction
+
+function! s:Test_trim_2_spaces_from_end()
+	AssertEquals('clouds', S('clouds  ').trim().str)
+endfunction
+
+function! s:Test_trim_space_from_beginning_and_end()
+	AssertEquals('tree', S(' tree ').trim().str)
+endfunction
+
+function! s:Test_trim_2_spaces_from_beginning_and_end()
+	AssertEquals('tree', S('  tree  ').trim().str)
+endfunction
+
+function! s:Test_trim_space_to_empty_string()
+	AssertEquals('', S(' ').trim().str)
+endfunction
+
+function! s:Test_trim_2_spaces_to_empty_string()
+	AssertEquals('', S('  ').trim().str)
+endfunction
+
+function! s:Test_trim_when_nothing_to_change()
+	AssertEquals("don't gotta trim me", S("don't gotta trim me").trim().str)
+endfunction
+
+function! s:Test_trim_when_nothing_to_change_but_there_are_spaces_close_to_the_start_and_end()
+	AssertEquals('I should not change .', S('I should not change .').trim().str)
+endfunction
+
+function! s:Test_trim_empty_string()
+	AssertEquals('', S('').trim().str)
+endfunction

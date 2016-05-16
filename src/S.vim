@@ -36,7 +36,14 @@ function! S(str)
 
 	" returns an S with spaces removed from the beginning and end
 	function! s.trim()
-		return S(self.str)
+		let ret_s= S(self.str)
+		while ret_s.starts_with(' ')
+			let ret_s= ret_s.remove_start()
+		endwhile
+		while ret_s.ends_with(' ')
+			let ret_s= ret_s.remove_end()
+		endwhile
+		return ret_s
 	endfunction
 
 	function! s.remove_start()
