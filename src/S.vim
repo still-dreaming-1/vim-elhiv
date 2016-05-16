@@ -34,7 +34,7 @@ function! S(str)
 		return S(escape(self.str, a:chars))
 	endfunction
 
-	" returns a string with spaces removed from the beginning and end
+	" returns an S with spaces removed from the beginning and end
 	function! s.trim()
 		return S(self.str)
 	endfunction
