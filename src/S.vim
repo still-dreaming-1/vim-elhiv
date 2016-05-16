@@ -1,5 +1,24 @@
 function! S(str)
-	let s= l_s#new(a:str)
+	let s= {}
+	let s.str= a:str
+	let s.len= len(s.str)
+	
+	" returns -1 or index
+	function! s.ridx(needle, ...)
+		if a:0 > 0
+			let start= a:1
+			return l_s#new(self.str).ridx(a:needle, start)
+		endif
+		return l_s#new(self.str).ridx(a:needle)
+	endfunction
+
+	function! s.starts_with(str)
+		return l_s#new(self.str).starts_with(a:str)
+	endfunction
+
+	function! s.remove_end()
+		return S(l_s#new(self.str).remove_end().str)
+	endfunction
 
 	function! s.ends_with(str)
 		let length= len(a:str)
