@@ -15,5 +15,14 @@ function! S(str)
 		return escape(self.str, a:chars)
 	endfunction
 
+	" returns a string with spaces removed from the beginning and end
+	function! s.trim()
+		return S(self.str)
+	endfunction
+
+	function! s.remove_start()
+		return S(self.str)
+	endfunction
+
 	return s
 endfunction
