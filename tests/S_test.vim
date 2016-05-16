@@ -92,3 +92,19 @@ endfunction
 function! s:Test_escape_space_between_two_words()
 	AssertEquals('some\ name', S('some name').escape(' ').str)
 endfunction
+
+function! s:Test_remove_start_long_string()
+	AssertEquals(' am kind of a long string', S('I am kind of a long string').remove_start().str)
+endfunction
+
+function! s:Test_remove_start_of_2_char_string()
+	AssertEquals('b', S('ab').remove_start().str)
+endfunction
+
+function! s:Test_remove_start_of_1_char_string()
+	AssertEquals('', S('v').remove_start().str)
+endfunction
+
+function! s:Test_remove_start_of_empty_str()
+	AssertEquals('', S('').remove_start().str)
+endfunction

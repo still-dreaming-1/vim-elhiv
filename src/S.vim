@@ -40,7 +40,7 @@ function! S(str)
 	endfunction
 
 	function! s.remove_start()
-		return S(self.str)
+		return S(self.str[1 : ])
 	endfunction
 
 	return s
