@@ -160,3 +160,23 @@ endfunction
 function! s:Test_trim_empty_string()
 	AssertEquals('', S('').trim().str)
 endfunction
+
+function! s:Test_after_last_when_multiple_single_char_search()
+	AssertEquals('filename', S('/some dir/another dir/filename').after_last('/').str)
+endfunction
+
+function! s:Test_after_last_when_one_single_char_search()
+	AssertEquals('txt', S('/some dir/another dir/filename.txt').after_last('.').str)
+endfunction
+
+function! s:Test_after_last_when_nothing_after_last()
+	AssertEquals('', S('/some dir/another dir/filename').after_last('filename').str)
+endfunction
+
+function! s:Test_after_last_when_search_not_found()
+	AssertEquals('', S('/some dir/another dir/filename.txt').after_last('4').str)
+endfunction
+
+function! s:Test_after_last_when_str_is_empty()
+	AssertEquals('', S('').after_last('a').str)
+endfunction
