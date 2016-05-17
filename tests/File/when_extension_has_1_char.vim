@@ -12,6 +12,10 @@ function! s:Test_name()
 	AssertEquals('I have an extension.c', s:file.name)
 endfunction
 
+function! s:Test_name_without_extension()
+	AssertEquals('I have an extension', s:file.name_without_extension)
+endfunction
+
 function! s:Test_not_readable()
 	Assert !s:file.readable()
 endfunction

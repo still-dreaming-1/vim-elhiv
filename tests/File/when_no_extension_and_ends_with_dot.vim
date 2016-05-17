@@ -12,6 +12,10 @@ function! s:Test_name()
 	AssertEquals('some.', s:file.name)
 endfunction
 
+function! s:Test_name_without_extension()
+	AssertEquals('some', s:file.name_without_extension)
+endfunction
+
 function! s:Test_not_readable()
 	Assert !s:file.readable()
 endfunction

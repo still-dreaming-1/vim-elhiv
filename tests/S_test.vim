@@ -25,6 +25,16 @@ function! s:Test_ridx()
 	AssertEquals(3, s.ridx(';'))
 endfunction
 
+function! s:Test_ridx_with_multi_char_str()
+	let s= S(';ok;there')
+	AssertEquals(1, s.ridx('ok'))
+endfunction
+
+function! s:Test_ridx_with_nothing_before_match()
+	let s= S('/some dir/another dir/filename')
+	AssertEquals(0, s.ridx('/some'))
+endfunction
+
 function! s:Test_not_starts_with_ending()
 	Assert !S('one').starts_with('e')
 endfunction
@@ -179,4 +189,24 @@ endfunction
 
 function! s:Test_after_last_when_str_is_empty()
 	AssertEquals('', S('').after_last('a').str)
+endfunction
+
+function! s:Test_before_last_when_multiple_single_char_search()
+	AssertEquals('/some dir/another dir', S('/some dir/another dir/filename').before_last('/').str)
+endfunction
+
+function! s:Test_before_last_when_one_single_char_search()
+	AssertEquals('/some dir/another dir/filename', S('/some dir/another dir/filename.txt').before_last('.').str)
+endfunction
+
+function! s:Test_before_last_when_nothing_before_last()
+	AssertEquals('', S('/some dir/another dir/filename').before_last('/some').str)
+endfunction
+
+function! s:Test_before_last_when_search_not_found()
+	AssertEquals('/some dir/another dir/filename.txt', S('/some dir/another dir/filename.txt').before_last('4').str)
+endfunction
+
+function! s:Test_before_last_when_str_is_empty()
+	AssertEquals('', S('').before_last('a').str)
 endfunction

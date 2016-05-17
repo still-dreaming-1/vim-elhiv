@@ -4,6 +4,7 @@ function! File(path)
 	let s_path= S(file.path)
 	let file.extension= s_path.after_last('.').str
 	let file.name= s_path.after_last('/').str
+	let file.name_without_extension= S(file.name).before_last('.').str
 
 	function! file.readable()
 		return l_file_info#new(self.path).readable

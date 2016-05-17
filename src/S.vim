@@ -61,5 +61,17 @@ function! S(str)
 		return S(self.str[i + len(a:str) : ])
 	endfunction
 
+	function! s.before_last(str)
+		let i= self.ridx(a:str)
+		if i == -1
+			return S(self.str)
+		endif
+		let i -= 1
+		if i <= 0
+			return S('')
+		endif
+		return S(self.str[0 : i])
+	endfunction
+
 	return s
 endfunction
