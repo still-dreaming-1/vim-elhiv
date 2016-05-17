@@ -53,5 +53,13 @@ function! S(str)
 		return S(self.str[1 : ])
 	endfunction
 
+	function! s.after_last(str)
+		let i= self.ridx(a:str)
+		if i == -1
+			return S('')
+		endif
+		return S(self.str[i + len(a:str) : ])
+	endfunction
+
 	return s
 endfunction
