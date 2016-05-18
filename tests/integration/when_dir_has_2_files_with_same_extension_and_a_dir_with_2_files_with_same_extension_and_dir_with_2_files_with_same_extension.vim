@@ -84,5 +84,14 @@ function! s:Teardown()
 	Assert elapsed_milliseconds < 1000
 endfunction
 
-function! s:Test_something()
+function! s:Test_bottom_dir_get_files_with_extension_recursive_js()
+	let stopwatch= Stopwatch()
+	call stopwatch.start()
+	let js_list= s:dir.get_files_with_extension_recursive('js')
+	let elapsed= stopwatch.stop()
+	AssertEquals(6, len(js_list))
+	" make sure it didn't get slower than it already was:
+	Assert elapsed < 40
+	" make it faster:
+	Assert elapsed < 35
 endfunction
