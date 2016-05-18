@@ -80,7 +80,7 @@ function! Dir(path)
 		return self._get_files_with_extension_recursive_using_find_implementation(a:extension)
 	endfunction
 	
-	" Not finished. This is an experimental implementation to improve speed that can be called from Dir.get_files_with_extension_recursive()
+	" The current implementation proven to work and be less slow than the previous implementation. Still not as fast as I would like
 	function! dir._get_files_with_extension_recursive_using_find_implementation(extension)
 		"started from the implemenation of get_all_dirs(), which is not recursive
 		let all_files_list= []
@@ -95,18 +95,6 @@ function! Dir(path)
 			endif
 		endfor
 		return all_files_list
-	endfunction
-	
-	" too slow. This is an accurate / working implementation that can be called from Dir.get_files_with_extension_recursive()
-	function! dir._get_files_with_extension_recursive_using_library_implementation(extension)
-		let all_files= self.get_all_files_recursive()
-		let all_files_with_extension= []
-		for file in all_files
-			if S(file.path).ends_with('.'.a:extension)
-				call add(all_files_with_extension, file)
-			endif
-		endfor
-		return all_files_with_extension
 	endfunction
 
 	function! dir.create()
