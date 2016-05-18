@@ -76,6 +76,7 @@ function! Dir(path)
 		return all_dirs_recursive
 	endfunction
 
+	" too slow
 	function! dir.get_files_with_extension_recursive(extension)
 		let all_files= self.get_all_files_recursive()
 		let all_files_with_extension= []
