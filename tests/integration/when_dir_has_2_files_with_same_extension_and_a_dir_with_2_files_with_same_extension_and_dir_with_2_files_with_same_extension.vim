@@ -13,6 +13,8 @@ function! s:create_script_vars()
 endfunction
 
 function! s:Setup()
+	let s:stopwatch= Stopwatch()
+	call s:stopwatch.start()
 	call s:safe_teardown()
 	call s:create_script_vars()
 	Assert !s:dir.exists()
@@ -78,6 +80,8 @@ function! s:Teardown()
 	Assert !s:sub_sub_file.writable()
 	Assert !s:sub_sub_file_2.readable()
 	Assert !s:sub_sub_file_2.writable()
+	let elapsed_milliseconds= s:stopwatch.start()
+	Assert elapsed_milliseconds < 1000
 endfunction
 
 function! s:Test_something()
