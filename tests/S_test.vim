@@ -108,6 +108,22 @@ function! s:Test_not_ends_with_last_char_when_different_capitalization()
 	Assert !S('one').ends_with('E')
 endfunction
 
+function! s:Test_1_ends_with_1()
+	Assert S('1').ends_with('1')
+endfunction
+
+function! s:Test_0_ends_with_0()
+	Assert S('0').ends_with('0')
+endfunction
+
+function! s:Test_0_not_ends_with_1()
+	Assert !S('0').ends_with('1')
+endfunction
+
+function! s:Test_1_not_ends_with_0()
+	Assert !S('1').ends_with('0')
+endfunction
+
 function! s:Test_remove_end_of_single_char_string()
 	AssertEquals('', S('a').remove_end().str)
 endfunction
