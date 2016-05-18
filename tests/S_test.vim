@@ -20,6 +20,31 @@ function! s:Test_len_of_longer_string()
 	AssertEquals(27, s.len)
 endfunction
 
+function! s:Test_contains_when_searching_for_the_only_char()
+	let s= S('1')
+	Assert s.contains('1')
+endfunction
+
+function! s:Test_contains_when_searching_for_the_entire_string()
+	let s= S('normal sized string')
+	Assert s.contains('normal sized string')
+endfunction
+
+function! s:Test_contains_when_searching_for_middle_of_string()
+	let s= S('normal sized string')
+	Assert s.contains('sized')
+endfunction
+
+function! s:Test_not_contains()
+	let s= S('2')
+	Assert !s.contains('1')
+endfunction
+
+function! s:Test_not_contains_when_empty()
+	let s= S('')
+	Assert !s.contains('1')
+endfunction
+
 function! s:Test_ridx()
 	let s= S(';ok;there')
 	AssertEquals(3, s.ridx(';'))

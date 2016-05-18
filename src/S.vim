@@ -2,6 +2,10 @@ function! S(str)
 	let s= {}
 	let s.str= a:str
 	let s.len= len(s.str)
+
+	function! s.contains(needle)
+		return stridx(self.str, a:needle) != -1
+	endfunction
 	
 	" returns -1 or index
 	function! s.ridx(needle, ...)
