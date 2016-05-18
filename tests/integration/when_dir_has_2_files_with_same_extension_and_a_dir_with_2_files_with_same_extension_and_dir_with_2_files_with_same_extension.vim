@@ -90,8 +90,6 @@ function! s:Test_bottom_dir_get_files_with_extension_recursive_js()
 	let js_list= s:dir.get_files_with_extension_recursive('js')
 	let elapsed= stopwatch.stop()
 	AssertEquals(6, len(js_list))
-	" make sure it didn't get slower than it already was:
-	Assert elapsed < 40
-	" make it faster:
-	Assert elapsed < 35
+	" this wass passing at some point, so don't let it get slower. Actually it needs to be even faster than this
+	Assert elapsed < 15
 endfunction

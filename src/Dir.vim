@@ -76,8 +76,29 @@ function! Dir(path)
 		return all_dirs_recursive
 	endfunction
 
-	" too slow
 	function! dir.get_files_with_extension_recursive(extension)
+		return self._get_files_with_extension_recursive_using_find_implementation(a:extension)
+	endfunction
+	
+	" Not finished. This is an experimental implementation to improve speed that can be called from Dir.get_files_with_extension_recursive()
+	function! dir._get_files_with_extension_recursive_using_find_implementation(extension)
+		"started from the implemenation of get_all_dirs(), which is not recursive
+		let all_files_list= []
+		let shell= Shell()
+		" I should try running/testing the desired command manually before running/testing it here.
+		let out= S(shell.run('find '.shellescape(self.path).' -type f')) " the get_all_dirs() uses -type d, for directories, so I am guessing -type f will work for files?
+		let path_list= split(out.str, "\n")
+		let desired_end= '.'.a:extension
+		for file_path in path_list
+			if S(file_path).ends_with(desired_end)
+				call add(all_files_list, File(file_path))
+			endif
+		endfor
+		return all_files_list
+	endfunction
+	
+	" too slow. This is an accurate / working implementation that can be called from Dir.get_files_with_extension_recursive()
+	function! dir._get_files_with_extension_recursive_using_library_implementation(extension)
 		let all_files= self.get_all_files_recursive()
 		let all_files_with_extension= []
 		for file in all_files
