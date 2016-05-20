@@ -86,13 +86,12 @@ function! Dir(path)
 		let all_files_list= []
 		let shell= Shell()
 		" I should try running/testing the desired command manually before running/testing it here.
-		let out= S(shell.run('find '.shellescape(self.path).' -type f')) " the get_all_dirs() uses -type d, for directories, so I am guessing -type f will work for files?
+		let extension_search_str= S(shellescape(a:extension)).remove_start().remove_end().str
+		let extension_search_str= "'*.".extension_search_str."'"
+		let out= S(shell.run('find '.shellescape(self.path).' -type f -name '.extension_search_str)) " the get_all_dirs() uses -type d, for directories, so I am guessing -type f will work for files?
 		let path_list= split(out.str, "\n")
-		let desired_end= '.'.a:extension
 		for file_path in path_list
-			if S(file_path).ends_with(desired_end)
-				call add(all_files_list, File(file_path))
-			endif
+			call add(all_files_list, File(file_path))
 		endfor
 		return all_files_list
 	endfunction
