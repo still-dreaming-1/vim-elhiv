@@ -62,4 +62,6 @@ endfunction
 function! s:Test_files_are_empty()
 	AssertEquals(0, s:file.size())
 	AssertEquals(0, s:second_file.size())
+	AssertEquals(0, len(s:file.read_lines()))
+	AssertEquals(0, len(s:second_file.read_lines()))
 endfunction

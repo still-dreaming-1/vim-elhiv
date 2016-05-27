@@ -50,4 +50,5 @@ endfunction
 
 function! s:Test_file_is_empty()
 	AssertEquals(0, s:file.size())
+	AssertEquals(0, len(s:file.read_lines()))
 endfunction

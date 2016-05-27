@@ -81,6 +81,8 @@ endfunction
 function! s:Test_files_are_empty()
 	AssertEquals(0, s:file.size())
 	AssertEquals(0, s:sub_file.size())
+	AssertEquals(0, len(s:file.read_lines()))
+	AssertEquals(0, len(s:sub_file.read_lines()))
 endfunction
 
 function! s:Test_sub_dir_contains_file_path_recursive_for_sub_file()

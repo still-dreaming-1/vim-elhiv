@@ -15,6 +15,14 @@ endfunction
 
 function! s:Test_not_empty()
 	Assert s:file.size() > 0
+	Assert 0 < len(s:file.read_lines())
+endfunction
+
+function! s:Test_contains_the_lines()
+	let lines= s:file.read_lines()
+	AssertEquals('<?', lines[0])
+	AssertEquals('class non_empty_php_file {', lines[1])
+	AssertEquals('}', lines[2])
 endfunction
 
 function! s:Test_parent_dir_contains_file_path_recursive()

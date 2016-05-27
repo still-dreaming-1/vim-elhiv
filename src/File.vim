@@ -42,5 +42,14 @@ function! File(path)
 		return getfsize(self.path)
 	endfunction
 
+	function! file.append_line(str)
+		call writefile([a:str], self.path, 'a')
+	endfunction
+
+	" returns a list of lines
+	function! file.read_lines()
+		return readfile(self.path)
+	endfunction
+
 	return file
 endfunction
