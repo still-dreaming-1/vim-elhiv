@@ -40,6 +40,9 @@ function! Dir(path)
 	endfunction
 
 	function! dir.get_all_files_recursive()
+		if exists('g:l_log') " should be a File object
+			call g:l_log.append_line('starting dir.get_all_files_recursive()')
+		endif
 		let all_files_recursive= []
 		let all_dirs= self.get_all_dirs_recursive()
 		call add(all_dirs, self)
@@ -49,6 +52,14 @@ function! Dir(path)
 				call add(all_files_recursive, file)
 			endfor
 		endfor
+		if exists('g:l_log') " should be a File object
+			for file in all_files_recursive
+				call g:l_log.append_line('found file: '.file.path)
+			endfor
+		endif
+		if exists('g:l_log') " should be a File object
+			call g:l_log.append_line('finished dir.get_all_files_recursive()')
+		endif
 		return all_files_recursive
 	endfunction
 

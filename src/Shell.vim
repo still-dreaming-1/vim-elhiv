@@ -7,6 +7,10 @@ function! Shell()
 			call g:l_shell_log.append_line('shell command: '.a:command)
 			call g:l_shell_log.append_line('shell output: '.out)
 		endif
+		if exists('g:l_log') " should be a File object
+			call g:l_log.append_line('shell command: '.a:command)
+			call g:l_log.append_line('shell output: '.out)
+		endif
 		return out
 	endfunction
 	return me
