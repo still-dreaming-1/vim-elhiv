@@ -1,4 +1,4 @@
-function! Current_buf()
+function! Current_buffer()
 	let buf= {}
 
 	function! buf.dir()
