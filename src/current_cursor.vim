@@ -1,4 +1,4 @@
-function! Current_cursor()
+function! L_current_cursor()
 	let cursor= {}
 
 	function! cursor.word()
