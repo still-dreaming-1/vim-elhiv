@@ -1,7 +1,7 @@
-UTSuite Dir_modifying
+UTSuite dir modifying
 
 function! s:setup_script_vars()
-	let s:data_dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
+	let s:data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir/data')
 	let s:before_dir= s:data_dir.get_contained_dir('before')
 	let s:empty_dir= s:before_dir.get_contained_dir('empty dir')
 	let s:after_dir= s:data_dir.get_contained_dir('after')

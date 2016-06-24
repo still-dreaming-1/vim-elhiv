@@ -1,7 +1,7 @@
 UTSuite integration when directory has one file with no file extension
 
 function! s:Setup()
-	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('tests/integration/data')
+	let s:dir= L_dir(g:elhiv_dir_path).get_contained_dir('tests/integration/data')
 	Assert !s:dir.exists()
 	call s:dir.create()
 	Assert s:dir.exists()

@@ -1,7 +1,7 @@
 UTSuite integration: when empty dir
 
 function! s:Setup()
-	let s:empty_dir= Dir(g:elhiv_dir_path).get_contained_dir('static test data/empty dir')
+	let s:empty_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data/empty dir')
 	Assert s:empty_dir.exists()
 	let s:non_existent_file= s:empty_dir.get_contained_file('non existent file.txt')
 endfunction

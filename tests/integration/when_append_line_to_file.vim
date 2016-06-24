@@ -1,7 +1,7 @@
 UTSuite integration when append_line() to file
 
 function! s:Setup()
-	let s:dir= Dir(g:elhiv_dir_path).get_contained_dir('test_data')
+	let s:dir= L_dir(g:elhiv_dir_path).get_contained_dir('test_data')
 	Assert !s:dir.exists()
 	call s:dir.create()
 	Assert s:dir.exists()

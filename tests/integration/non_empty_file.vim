@@ -1,7 +1,7 @@
 UTSuite integration non-empty file
 
 function! s:Setup()
-	let s:static_data_dir= Dir(g:elhiv_dir_path).get_contained_dir('static test data')
+	let s:static_data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
 	let s:file= s:static_data_dir.get_contained_file('non_empty_php_file.php')
 endfunction
 

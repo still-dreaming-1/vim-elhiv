@@ -1,89 +1,89 @@
-UTSuite Dir
+UTSuite L_dir
 
 function! s:Test_path()
-	AssertEquals('/i_am_the_path', Dir('/i_am_the_path').path)
+	AssertEquals('/i_am_the_path', L_dir('/i_am_the_path').path)
 endfunction
 
 function! s:Test_can_be_root()
-	let dir= Dir('/')
+	let dir= L_dir('/')
 	AssertEquals('/', dir.path)
 	Assert dir.exists()
 endfunction
 
 function! s:Test_parent()
-	AssertEquals('/i_am_the_parent', Dir('/i_am_the_parent/made_up_non_existent_dir').parent().path)
+	AssertEquals('/i_am_the_parent', L_dir('/i_am_the_parent/made_up_non_existent_dir').parent().path)
 endfunction
 
 function! s:Test_root_has_no_parent()
-	AssertEquals(Null(), Dir('/').parent())
+	AssertEquals(Null(), L_dir('/').parent())
 endfunction
 
 function! s:Test_parent_with_no_starting_slash()
-	AssertEquals('i_am_the_parent', Dir('i_am_the_parent/made_up_non_existent_dir').parent().path)
+	AssertEquals('i_am_the_parent', L_dir('i_am_the_parent/made_up_non_existent_dir').parent().path)
 endfunction
 
 function! s:Test_short_parent()
-	AssertEquals('~', Dir('~/made_up_non_existent_dir').parent().path)
+	AssertEquals('~', L_dir('~/made_up_non_existent_dir').parent().path)
 endfunction
 
 function! s:Test_parent_when_child_ends_with_slash()
-	AssertEquals('your_mom', Dir('your_mom/made_up_non_existent_dir/').parent().path)
+	AssertEquals('your_mom', L_dir('your_mom/made_up_non_existent_dir/').parent().path)
 endfunction
 
 function! s:Test_short_parent_when_child_ends_with_slash()
-	AssertEquals('~', Dir('~/made_up_non_existent_dir/').parent().path)
+	AssertEquals('~', L_dir('~/made_up_non_existent_dir/').parent().path)
 endfunction
 
 function! s:Test_no_parent_when_child_short()
-	AssertEquals(Null(), Dir('~').parent())
+	AssertEquals(Null(), L_dir('~').parent())
 endfunction
 
 function! s:Test_no_parent_when_child_is_dot()
-	AssertEquals(Null(), Dir('.').parent())
+	AssertEquals(Null(), L_dir('.').parent())
 endfunction
 
 function! s:Test_no_parent_when_child_is_dot_slash()
-	AssertEquals(Null(), Dir('./').parent())
+	AssertEquals(Null(), L_dir('./').parent())
 endfunction
 
 function! s:Test_parent_is_dot()
-	AssertEquals('.', Dir('./some_dir').parent().path)
+	AssertEquals('.', L_dir('./some_dir').parent().path)
 endfunction
 
 function! s:Test_empty_dir_not_exists()
-	Assert !Dir('').exists()
+	Assert !L_dir('').exists()
 endfunction
 
 function! s:Test_home_dir_exists()
-	Assert Dir('/home').exists()
+	Assert L_dir('/home').exists()
 endfunction
 
 function! s:Test_contained_dir_has_correct_path()
-	let dir= Dir('/some_dir')
+	let dir= L_dir('/some_dir')
 	let contained_dir= dir.get_contained_dir('inside')
 	AssertEquals('/some_dir/inside', contained_dir.path)
 endfunction
 
 function! s:Test_contained_file_has_correct_path()
-	let dir= Dir('/some_dir')
+	let dir= L_dir('/some_dir')
 	let contained_file= dir.get_contained_file('myfile.txt')
 	AssertEquals('/some_dir/myfile.txt', contained_file.path)
 endfunction
 
 function! s:Test_not_subdir_of_non_existent_dir()
-	let mom= Dir('mommy')
+	let mom= L_dir('mommy')
 	let baby= mom.get_contained_dir('baby')
 	Assert !baby.is_subdir_of(mom)
 endfunction
 
 function! s:Test_non_existent_dir_not_has_subdir()
-	let mom= Dir('mommy')
+	let mom= L_dir('mommy')
 	let baby= mom.get_contained_dir('baby')
 	Assert !mom.has_subdir(baby)
 endfunction
 
 function! s:Test_child_not_subdir_of_parent_when_parent_contains_no_dirs()
-	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir/data')
 	Assert parent.exists()
 	let child= parent.get_contained_dir('I do not exist')
 	Assert !child.exists()
@@ -91,7 +91,7 @@ function! s:Test_child_not_subdir_of_parent_when_parent_contains_no_dirs()
 endfunction
 
 function! s:Test_parent_not_has_subdir_when_parent_contains_no_dirs()
-	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir/data')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir/data')
 	Assert parent.exists()
 	let child= parent.get_contained_dir('I do not exist')
 	Assert !child.exists()
@@ -99,7 +99,7 @@ function! s:Test_parent_not_has_subdir_when_parent_contains_no_dirs()
 endfunction
 
 function! s:Test_child_not_subdir_of_parent_when_parent_only_contains_other_children()
-	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir')
 	Assert parent.exists()
 	let non_existent_child= parent.get_contained_dir('I do not exist')
 	Assert !non_existent_child.exists()
@@ -109,7 +109,7 @@ function! s:Test_child_not_subdir_of_parent_when_parent_only_contains_other_chil
 endfunction
 
 function! s:Test_parent_not_has_subdir_when_only_has_other_children()
-	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir')
 	Assert parent.exists()
 	let non_existent_child= parent.get_contained_dir('I do not exist')
 	Assert !non_existent_child.exists()
@@ -119,7 +119,7 @@ function! s:Test_parent_not_has_subdir_when_only_has_other_children()
 endfunction
 
 function! s:Test_is_subdir_of()
-	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir')
 	Assert parent.exists()
 	let child= parent.get_contained_dir('data')
 	Assert child.exists()
@@ -127,7 +127,7 @@ function! s:Test_is_subdir_of()
 endfunction
 
 function! s:Test_has_subdir()
-	let parent= Dir(g:elhiv_dir_path).get_contained_dir('tests/Dir')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir')
 	Assert parent.exists()
 	let child= parent.get_contained_dir('data')
 	Assert child.exists()
