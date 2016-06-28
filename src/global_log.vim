@@ -3,7 +3,7 @@ function! L_global_log()
 	let global_log= {}
 
 	function! global_log.log_is_enabled()
-		return exists('g:l_log') " should be a file object
+		return exists('g:l_log') " should be a file object created by the user to point to whatever file they want to use for their global log
 	endfunction
 
 	function! global_log.log(line)
@@ -13,9 +13,4 @@ function! L_global_log()
 	endfunction
 
 	return global_log
-endfunction
-
-" Log function that uses a global log object.
-function! Log(line)
-	call L_global_log().log(a:line)
 endfunction

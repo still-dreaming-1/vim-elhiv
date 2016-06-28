@@ -7,3 +7,4 @@ for s:file_to_source in s:src_dir_info.get_all_file_info()
 	execute 'source '.s:file_to_source.path
 endfor
 let g:elhiv_dir_path= s:elhiv_dir_info.path
+let g:l= L_l()
