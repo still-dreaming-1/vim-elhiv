@@ -1,5 +1,5 @@
-" Global_log class
-function! Global_log()
+" global_log class
+function! L_global_log()
 	let global_log= {}
 
 	function! global_log.log_is_enabled()
@@ -17,5 +17,5 @@ endfunction
 
 " Log function that uses a global log object.
 function! Log(line)
-	call Global_log().log(a:line)
+	call L_global_log().log(a:line)
 endfunction
