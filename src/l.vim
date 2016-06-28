@@ -11,9 +11,9 @@ function! L_l()
 		call L_global_log().log(a:line)
 	endfunction
 
-	return l
-endfunction
+	function! l.get_cursor_char()
+		return getline(".")[col(".")-1]
+	endfunction
 
-function! Get_cursor_char()
-	return getline(".")[col(".")-1]
+	return l
 endfunction
