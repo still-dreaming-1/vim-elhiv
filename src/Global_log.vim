@@ -3,7 +3,7 @@ function! Global_log()
 	let global_log= {}
 
 	function! global_log.log_is_enabled()
-		return exists('g:l_log') " should be a L_file object
+		return exists('g:l_log') " should be a file object
 	endfunction
 
 	function! global_log.log(line)
