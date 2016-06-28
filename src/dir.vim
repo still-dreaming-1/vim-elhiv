@@ -99,7 +99,7 @@ function! L_dir(path)
 		" I should try running/testing the desired command manually before running/testing it here.
 		let extension_search_str= S(shellescape(a:extension)).remove_start().remove_end().str
 		let extension_search_str= "'*.".extension_search_str."'"
-		let out= S(shell.run('find '.shellescape(self.path).' -type f -name '.extension_search_str)) " the get_all_dirs() uses -type d, for directories, so I am guessing -type f will work for files?
+		let out= S(shell.run('find '.shellescape(self.path).' -type f -name '.extension_search_str))
 		let path_list= split(out.str, "\n")
 		for file_path in path_list
 			call add(all_files_list, L_file(file_path))
