@@ -1,7 +1,7 @@
-UTSuite File when extension has 1 character
+UTSuite L_file when extension has 1 character
 
 function! s:Setup()
-	let s:file= File('/yay/I have an extension.c')
+	let s:file= L_file('/yay/I have an extension.c')
 endfunction
 
 function! s:Test_path()

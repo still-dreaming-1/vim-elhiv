@@ -22,11 +22,11 @@ function! L_dir(path)
 
 	function! dir.get_contained_file(name)
 		let contained_info= l_dir_info#new(self.path).get_contained_file_info(a:name)
-		return File(contained_info.path)
+		return L_file(contained_info.path)
 	endfunction
 
 	function! dir.contains_file_path_recursive(path)
-		let file= File(a:path)
+		let file= L_file(a:path)
 		return S(file.path).starts_with(self.path) && file.readable()
 	endfunction
 
@@ -34,13 +34,13 @@ function! L_dir(path)
 		let all_files= []
 		let all_file_info= l_dir_info#new(self.path).get_all_file_info()
 		for file_info in all_file_info
-			call add(all_files, File(file_info.path))
+			call add(all_files, L_file(file_info.path))
 		endfor
 		return all_files
 	endfunction
 
 	function! dir.get_all_files_recursive()
-		if exists('g:l_log') " should be a File object
+		if exists('g:l_log') " should be a L_file object
 			call g:l_log.append_line('starting dir.get_all_files_recursive()')
 		endif
 		let all_files_recursive= []
@@ -52,12 +52,12 @@ function! L_dir(path)
 				call add(all_files_recursive, file)
 			endfor
 		endfor
-		if exists('g:l_log') " should be a File object
+		if exists('g:l_log') " should be a L_file object
 			for file in all_files_recursive
 				call g:l_log.append_line('found file: '.file.path)
 			endfor
 		endif
-		if exists('g:l_log') " should be a File object
+		if exists('g:l_log') " should be a L_file object
 			call g:l_log.append_line('finished dir.get_all_files_recursive()')
 		endif
 		return all_files_recursive
@@ -102,7 +102,7 @@ function! L_dir(path)
 		let out= S(shell.run('find '.shellescape(self.path).' -type f -name '.extension_search_str)) " the get_all_dirs() uses -type d, for directories, so I am guessing -type f will work for files?
 		let path_list= split(out.str, "\n")
 		for file_path in path_list
-			call add(all_files_list, File(file_path))
+			call add(all_files_list, L_file(file_path))
 		endfor
 		return all_files_list
 	endfunction

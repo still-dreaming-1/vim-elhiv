@@ -1,15 +1,15 @@
-UTSuite File when 2 parent directories before the root directory
+UTSuite L_file when extension has 2 characters
 
 function! s:Setup()
-	let s:file= File('/ok/whatever/some.txt')
+	let s:file= L_file('/whatever/some.js')
 endfunction
 
 function! s:Test_path()
-	AssertEquals('/ok/whatever/some.txt', s:file.path)
+	AssertEquals('/whatever/some.js', s:file.path)
 endfunction
 
 function! s:Test_name()
-	AssertEquals('some.txt', s:file.name)
+	AssertEquals('some.js', s:file.name)
 endfunction
 
 function! s:Test_name_without_extension()
@@ -21,5 +21,5 @@ function! s:Test_not_readable()
 endfunction
 
 function! s:Test_extension()
-	AssertEquals('txt', s:file.extension)
+	AssertEquals('js', s:file.extension)
 endfunction

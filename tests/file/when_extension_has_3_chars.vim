@@ -1,15 +1,15 @@
-UTSuite File when extension has 2 characters
+UTSuite L_file when extension has 3 characters
 
 function! s:Setup()
-	let s:file= File('/whatever/some.js')
+	let s:file= L_file('/whatever/some.php')
 endfunction
 
 function! s:Test_path()
-	AssertEquals('/whatever/some.js', s:file.path)
+	AssertEquals('/whatever/some.php', s:file.path)
 endfunction
 
 function! s:Test_name()
-	AssertEquals('some.js', s:file.name)
+	AssertEquals('some.php', s:file.name)
 endfunction
 
 function! s:Test_name_without_extension()
@@ -21,5 +21,5 @@ function! s:Test_not_readable()
 endfunction
 
 function! s:Test_extension()
-	AssertEquals('js', s:file.extension)
+	AssertEquals('php', s:file.extension)
 endfunction

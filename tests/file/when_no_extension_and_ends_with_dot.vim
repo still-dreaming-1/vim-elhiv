@@ -1,7 +1,7 @@
-UTSuite File when has no extension and ends with dot
+UTSuite L_file when has no extension and ends with dot
 
 function! s:Setup()
-	let s:file= File('/whatever/some.')
+	let s:file= L_file('/whatever/some.')
 endfunction
 
 function! s:Test_path()

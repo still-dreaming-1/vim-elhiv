@@ -1,7 +1,7 @@
-UTSuite File when the parent directory is not the root directory
+UTSuite L_file when the parent directory is not the root directory
 
 function! s:Setup()
-	let s:file= File('/whatever/some.txt')
+	let s:file= L_file('/whatever/some.txt')
 endfunction
 
 function! s:Test_path()

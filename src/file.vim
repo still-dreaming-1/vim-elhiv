@@ -1,4 +1,4 @@
-function! File(path)
+function! L_file(path)
 	let file= {}
 	let file.path= a:path
 	let s_path= S(file.path)

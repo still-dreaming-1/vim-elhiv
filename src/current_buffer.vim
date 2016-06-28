@@ -6,7 +6,7 @@ function! L_current_buffer()
 	endfunction
 
 	function! buf.file()
-		return File(expand('%:p'))
+		return L_file(expand('%:p'))
 	endfunction
 
 	return buf
