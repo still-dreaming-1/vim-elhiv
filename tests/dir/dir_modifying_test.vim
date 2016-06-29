@@ -69,7 +69,7 @@ function! s:Test_get_all_files_when_1_file()
 	AssertEquals(1, len(files))
 	let gitignore= files[0]
 	Assert gitignore.readable()
-	Assert S(gitignore.path).ends_with('.gitignore')
+	Assert L_s(gitignore.path).ends_with('.gitignore')
 endfunction
 
 function! s:Test_get_all_files_when_2_files()
@@ -81,8 +81,8 @@ function! s:Test_get_all_files_when_2_files()
 	AssertEquals(2, len(all_files))
 	let actual_first_file= all_files[0]
 	Assert actual_first_file.readable()
-	Assert S(actual_first_file.path).ends_with('first file')
+	Assert L_s(actual_first_file.path).ends_with('first file')
 	let actual_second_file= all_files[1]
 	Assert actual_second_file.readable()
-	Assert S(actual_second_file.path).ends_with('second file')
+	Assert L_s(actual_second_file.path).ends_with('second file')
 endfunction

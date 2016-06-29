@@ -1,10 +1,10 @@
 function! L_file(path)
 	let file= {}
 	let file.path= a:path
-	let s_path= S(file.path)
+	let s_path= L_s(file.path)
 	let file.extension= s_path.after_last('.').str
 	let file.name= s_path.after_last('/').str
-	let file.name_without_extension= S(file.name).before_last('.').str
+	let file.name_without_extension= L_s(file.name).before_last('.').str
 
 	function! file.readable()
 		return l_file_info#new(self.path).readable

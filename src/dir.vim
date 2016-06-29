@@ -27,7 +27,7 @@ function! L_dir(path)
 
 	function! dir.contains_file_path_recursive(path)
 		let file= L_file(a:path)
-		return S(file.path).starts_with(self.path) && file.readable()
+		return L_s(file.path).starts_with(self.path) && file.readable()
 	endfunction
 
 	function! dir.get_all_files()
@@ -66,11 +66,11 @@ function! L_dir(path)
 	function! dir.get_all_dirs()
 		let all_dir_list= []
 		let shell= Shell()
-		let out= S(shell.run('find '.shellescape(self.path).' -maxdepth 1 -type d'))
+		let out= L_s(shell.run('find '.shellescape(self.path).' -maxdepth 1 -type d'))
 		let path_list= split(out.str, "\n")
 		let my_path= self.path.'/'
 		for dir_path in path_list
-			if dir_path !=# my_path && S(dir_path).starts_with(my_path)
+			if dir_path !=# my_path && L_s(dir_path).starts_with(my_path)
 				call add(all_dir_list, L_dir(dir_path))
 			endif
 		endfor
@@ -97,9 +97,9 @@ function! L_dir(path)
 		let all_files_list= []
 		let shell= Shell()
 		" I should try running/testing the desired command manually before running/testing it here.
-		let extension_search_str= S(shellescape(a:extension)).remove_start().remove_end().str
+		let extension_search_str= L_s(shellescape(a:extension)).remove_start().remove_end().str
 		let extension_search_str= "'*.".extension_search_str."'"
-		let out= S(shell.run('find '.shellescape(self.path).' -type f -name '.extension_search_str))
+		let out= L_s(shell.run('find '.shellescape(self.path).' -type f -name '.extension_search_str))
 		let path_list= split(out.str, "\n")
 		for file_path in path_list
 			call add(all_files_list, L_file(file_path))
@@ -132,7 +132,7 @@ function! L_dir(path)
 		if !a:dir.exists()
 			return 0
 		endif
-		if S(a:dir.path).starts_with(self.path)
+		if L_s(a:dir.path).starts_with(self.path)
 			return 1
 		endif
 		return 0

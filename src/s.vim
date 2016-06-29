@@ -1,4 +1,4 @@
-function! S(str)
+function! L_s(str)
 	let s= {}
 	let s.str= a:str
 	let s.len= len(s.str)
@@ -21,7 +21,7 @@ function! S(str)
 	endfunction
 
 	function! s.remove_end()
-		return S(l_s#new(self.str).remove_end().str)
+		return L_s(l_s#new(self.str).remove_end().str)
 	endfunction
 
 	function! s.ends_with(needle)
@@ -34,12 +34,12 @@ function! S(str)
 	endfunction
 
 	function! s.escape(chars)
-		return S(escape(self.str, a:chars))
+		return L_s(escape(self.str, a:chars))
 	endfunction
 
 	" returns an S with spaces and \n removed from the beginning and end
 	function! s.trim()
-		let ret_s= S(self.str)
+		let ret_s= L_s(self.str)
 		let chars_to_trim= [' ', "\n"]
 		for char in chars_to_trim
 			while ret_s.starts_with(char)
@@ -53,27 +53,27 @@ function! S(str)
 	endfunction
 
 	function! s.remove_start()
-		return S(self.str[1 : ])
+		return L_s(self.str[1 : ])
 	endfunction
 
 	function! s.after_last(str)
 		let i= self.ridx(a:str)
 		if i == -1
-			return S('')
+			return L_s('')
 		endif
-		return S(self.str[i + len(a:str) : ])
+		return L_s(self.str[i + len(a:str) : ])
 	endfunction
 
 	function! s.before_last(str)
 		let i= self.ridx(a:str)
 		if i == -1
-			return S(self.str)
+			return L_s(self.str)
 		endif
 		let i -= 1
 		if i <= 0
-			return S('')
+			return L_s('')
 		endif
-		return S(self.str[0 : i])
+		return L_s(self.str[0 : i])
 	endfunction
 
 	return s
