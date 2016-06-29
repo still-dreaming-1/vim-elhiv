@@ -9,7 +9,7 @@ function! L_dir(path)
 
 	function! dir.parent()
 		let parent_info= l_dir_info#new(self.path).parent()
-		if parent_info == Null()
+		if parent_info == L_null()
 			return parent_info
 		endif
 		return L_dir(parent_info.path)

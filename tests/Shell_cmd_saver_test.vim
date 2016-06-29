@@ -1,8 +1,8 @@
 UTSuite Shell_cmd_saver
 
-function! s:Test_before_run_last_cmd_is_Null()
+function! s:Test_before_run_last_cmd_is_null()
 	let shell= Shell_cmd_saver()
-	AssertEquals(Null(), shell.last_cmd)
+	AssertEquals(L_null(), shell.last_cmd)
 endfunction
 
 function! s:Test_run_sets_last_cmd()

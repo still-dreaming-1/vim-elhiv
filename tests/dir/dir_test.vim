@@ -15,7 +15,7 @@ function! s:Test_parent()
 endfunction
 
 function! s:Test_root_has_no_parent()
-	AssertEquals(Null(), L_dir('/').parent())
+	AssertEquals(L_null(), L_dir('/').parent())
 endfunction
 
 function! s:Test_parent_with_no_starting_slash()
@@ -35,15 +35,15 @@ function! s:Test_short_parent_when_child_ends_with_slash()
 endfunction
 
 function! s:Test_no_parent_when_child_short()
-	AssertEquals(Null(), L_dir('~').parent())
+	AssertEquals(L_null(), L_dir('~').parent())
 endfunction
 
 function! s:Test_no_parent_when_child_is_dot()
-	AssertEquals(Null(), L_dir('.').parent())
+	AssertEquals(L_null(), L_dir('.').parent())
 endfunction
 
 function! s:Test_no_parent_when_child_is_dot_slash()
-	AssertEquals(Null(), L_dir('./').parent())
+	AssertEquals(L_null(), L_dir('./').parent())
 endfunction
 
 function! s:Test_parent_is_dot()
