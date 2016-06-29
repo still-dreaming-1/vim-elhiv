@@ -1,4 +1,4 @@
-function! Stopwatch()
+function! L_stopwatch()
 	let stopwatch= {}
 	let stopwatch.start_time= -1
 	let stopwatch.stop_time= -1

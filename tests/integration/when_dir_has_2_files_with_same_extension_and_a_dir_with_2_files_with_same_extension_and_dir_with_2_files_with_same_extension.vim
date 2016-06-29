@@ -13,7 +13,7 @@ function! s:create_script_vars()
 endfunction
 
 function! s:Setup()
-	let s:stopwatch= Stopwatch()
+	let s:stopwatch= L_stopwatch()
 	call s:stopwatch.start()
 	call s:safe_teardown()
 	call s:create_script_vars()
@@ -85,7 +85,7 @@ function! s:Teardown()
 endfunction
 
 function! s:Test_bottom_dir_get_files_with_extension_recursive_js()
-	let stopwatch= Stopwatch()
+	let stopwatch= L_stopwatch()
 	call stopwatch.start()
 	let js_list= s:dir.get_files_with_extension_recursive('js')
 	let elapsed= stopwatch.stop()
