@@ -17,3 +17,8 @@ function! L_l()
 
 	return l
 endfunction
+
+" uses a global_log object to log stuff to the global log file as defined by the user
+function! l#log(line)
+	call L_global_log().log(a:line)
+endfunction
