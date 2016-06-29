@@ -1,4 +1,4 @@
-function! Shell_cmd_saver()
+function! L_shell_cmd_saver()
 	let saver= {}
 	let saver.last_cmd= L_null()
 	
