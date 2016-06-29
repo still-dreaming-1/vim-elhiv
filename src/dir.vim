@@ -1,7 +1,7 @@
 function! L_dir(path)
 	let dir= {}
 	let dir.path= a:path
-	let dir._shell= Shell()
+	let dir._shell= L_shell()
 
 	function! dir.exists()
 		return l_dir_info#new(self.path).exists
@@ -65,7 +65,7 @@ function! L_dir(path)
 
 	function! dir.get_all_dirs()
 		let all_dir_list= []
-		let shell= Shell()
+		let shell= L_shell()
 		let out= L_s(shell.run('find '.shellescape(self.path).' -maxdepth 1 -type d'))
 		let path_list= split(out.str, "\n")
 		let my_path= self.path.'/'
@@ -95,7 +95,7 @@ function! L_dir(path)
 	function! dir._get_files_with_extension_recursive_using_find_implementation(extension)
 		"started from the implemenation of get_all_dirs(), which is not recursive
 		let all_files_list= []
-		let shell= Shell()
+		let shell= L_shell()
 		" I should try running/testing the desired command manually before running/testing it here.
 		let extension_search_str= L_s(shellescape(a:extension)).remove_start().remove_end().str
 		let extension_search_str= "'*.".extension_search_str."'"

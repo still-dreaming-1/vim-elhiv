@@ -1,4 +1,4 @@
-function! Shell()
+function! L_shell()
 	let me= {}
 	let me._shell= l_shell#new()
 	function me.run(command)
