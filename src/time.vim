@@ -1,4 +1,4 @@
-function! Time()
+function! L_time()
 	let time= {}
 	
 	" returns a string. This is better than returning a number because it is too large to return as a number
