@@ -1,4 +1,5 @@
-function! U_ls(...)
+" Unique list. The items are guaranteed to be unique, duplicates will not be added.
+function! L_u_ls(...)
 	let u_ls= { 'ls' : [] }
 	let u_ls._ls= L_ls(u_ls.ls)
 
