@@ -1,6 +1,7 @@
 function! L_shell()
 	let me= {}
 	let me._shell= l_shell#new()
+
 	function me.run(command)
 		let out= self._shell.run(a:command)
 		if exists('g:l_shell_log') " should be a L_file object
@@ -13,5 +14,6 @@ function! L_shell()
 		endif
 		return out
 	endfunction
+
 	return me
 endfunction
