@@ -20,6 +20,11 @@ function! L_dir(path)
 		return L_dir(contained_info.path)
 	endfunction
 
+
+	function! dir.get_relative_dir(relative_path)
+		return L_null()
+	endfunction
+
 	function! dir.get_contained_file(name)
 		let contained_info= l_dir_info#new(self.path).get_contained_file_info(a:name)
 		return L_file(contained_info.path)
