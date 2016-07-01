@@ -8,7 +8,3 @@
 function! l#log(line)
 	call L_global_log().log(a:line)
 endfunction
-
-function! l#get_cursor_char()
-	return getline(".")[col(".")-1]
-endfunction
