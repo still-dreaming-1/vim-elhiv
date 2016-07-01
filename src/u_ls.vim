@@ -13,6 +13,12 @@ function! L_u_ls(...)
 		endif
 	endfunction
 
+	function! u_ls.extend(list_of_values)
+		for value in a:list_of_values
+			call self.add(value)
+		endfor
+	endfunction
+
 	function! u_ls.contains(value)
 		return self._ls.contains(a:value)
 	endfunction
