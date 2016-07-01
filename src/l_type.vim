@@ -1,3 +1,4 @@
+" comare these values to what is returned by the type() function
 function! l_type#num()
 	return 0;
 endfunction!
