@@ -2,6 +2,7 @@ UTSuite dir modifying
 
 function! s:setup_script_vars()
 	let s:static_data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
+		let s:static_empty_dir= s:static_data_dir.get_contained_dir('empty dir')
 	let s:data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('test_data')
 		let s:before_dir= s:data_dir.get_contained_dir('before')
 			let s:empty_dir_inside_before= s:before_dir.get_contained_dir('empty dir')
