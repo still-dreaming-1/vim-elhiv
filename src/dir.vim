@@ -21,8 +21,18 @@ function! L_dir(path)
 	endfunction
 
 
+	" implemented and have some tests, but not passing yet
 	function! dir.get_relative_dir(relative_path)
-		return L_null()
+		if L_s(a:relative_path).starts_with('../')
+			let parent= self.parent()
+			if len(a:relative_path) > 3
+				let parent_relative_path= ''
+				return parent.get_relative_dir(parent_relative_path)
+			else
+				return parent
+			endif
+		endif
+		return self.get_contained_dir(a:relative_path)
 	endfunction
 
 	function! dir.get_contained_file(name)

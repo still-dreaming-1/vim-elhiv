@@ -133,3 +133,16 @@ function! s:Test_has_subdir()
 	Assert child.exists()
 	Assert parent.has_subdir(child)
 endfunction
+
+function! s:Test_get_parent_using_get_relative_dir()
+	let static_data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
+	let elhiv_dir= static_data_dir.get_relative_dir('../')
+	AssertEquals(elhiv_dir.path, g:elhiv_dir_path)
+endfunction
+
+function! s:Test_get_dir_in_same_parent_using_get_relative_dir()
+	let file_dir= L_dir(g:elhiv_dir_path).get_contained_dir('tests/file')
+	let dir_dir= file_dir.get_relative_dir('../dir')
+	Assert L_s(dir_dir.path).ends_with('dir')
+	Assert dir_dir.exists()
+endfunction
