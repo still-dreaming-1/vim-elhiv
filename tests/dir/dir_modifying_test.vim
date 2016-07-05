@@ -12,6 +12,7 @@ endfunction
 function! s:Setup()
 	call s:safe_teardown()
 	call s:setup_script_vars()
+	Assert! s:static_data_dir.exists()
 	Assert! !s:data_dir.exists()
 	call s:data_dir.create()
 		Assert! !s:before_dir.exists()
