@@ -127,9 +127,9 @@ function! s:Test_is_subdir_of()
 endfunction
 
 function! s:Test_has_subdir()
-	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
 	Assert parent.exists()
-	let child= parent.get_contained_dir('data')
+	let child= parent.get_contained_dir('empty dir')
 	Assert child.exists()
 	Assert parent.has_subdir(child)
 endfunction
