@@ -44,12 +44,13 @@ function! s:Test_copy_empty_dir_and_delete()
 endfunction
 
 function! s:Test_create_no_recursion_and_delete()
-	let new_dir= s:after_dir.get_contained_dir('new dir')
+	let new_dir= s:data_dir.get_contained_dir('new dir')
 	Assert !new_dir.exists()
 	call new_dir.create()
 	Assert new_dir.exists()
 	call new_dir.delete()
 	Assert !new_dir.exists()
+	Assert! s:data_dir.exists()
 endfunction
 
 function! s:Test_get_all_files_when_1_file()
