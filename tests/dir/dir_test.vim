@@ -109,11 +109,11 @@ function! s:Test_child_not_subdir_of_parent_when_parent_only_contains_other_chil
 endfunction
 
 function! s:Test_parent_not_has_subdir_when_only_has_other_children()
-	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir')
+	let parent= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
 	Assert parent.exists()
 	let non_existent_child= parent.get_contained_dir('I do not exist')
 	Assert !non_existent_child.exists()
-	let real_child= parent.get_contained_dir('data')
+	let real_child= parent.get_contained_dir('empty dir')
 	Assert real_child.exists()
 	Assert !parent.has_subdir(non_existent_child)
 endfunction
