@@ -1,7 +1,7 @@
 UTSuite l_dir_info
 
 function! s:create_script_vars()
-	let s:data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('tests/dir/data')
+	let s:data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('test_data')
 	let s:before_dir= s:data_dir.get_contained_dir('before')
 	let s:empty_dir= s:before_dir.get_contained_dir('empty dir')
 	let s:dir_with_1_file= s:before_dir.get_contained_dir('dir with 1 file')
@@ -12,7 +12,9 @@ endfunction
 function! s:Setup()
 	call s:safe_tear_down()
 	call s:create_script_vars()
-	Assert s:data_dir.exists()
+	Assert! !s:data_dir.exists()
+	call s:data_dir.create()
+	Assert! s:data_dir.exists()
 	Assert !s:before_dir.exists()
 	call s:before_dir.create()
 	Assert s:before_dir.exists()
@@ -44,23 +46,15 @@ endfunction
 
 function! s:Teardown()
 	call s:create_script_vars()
-	Assert s:data_dir.exists()
-	Assert s:before_dir.exists()
-	call s:before_dir.delete()
-	Assert !s:before_dir.exists()
-
-	Assert s:after_dir.exists()
-	call s:after_dir.delete()
-	Assert !s:after_dir.exists()
+	Assert! s:data_dir.exists()
+	call s:data_dir.delete()
+	Assert! !s:data_dir.exists()
 endfunction
 
 function! s:safe_tear_down()
 	call s:create_script_vars()
-	if s:before_dir.exists()
-		call s:before_dir.delete()
-	endif
-	if s:after_dir.exists()
-		call s:after_dir.delete()
+	if s:data_dir.exists()
+		call s:data_dir.delete()
 	endif
 endfunction
 
