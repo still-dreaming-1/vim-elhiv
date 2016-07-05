@@ -41,13 +41,14 @@ function! s:Teardown()
 endfunction
 
 function! s:Test_copy_empty_dir_and_delete()
-	let copy= s:after_dir.get_contained_dir('empty dir')
+	let copy= s:data_dir.get_contained_dir('empty dir')
 	Assert !copy.exists()
-	call s:empty_dir_inside_before.copy_to(copy)
+	call s:static_empty_dir.copy_to(copy)
 	Assert copy.exists()
 	AssertEquals(0, len(copy.get_all_files()))
 	call copy.delete()
 	Assert !copy.exists()
+	Assert! s:static_empty_dir.exists()
 endfunction
 
 function! s:Test_create_no_recursion_and_delete()
