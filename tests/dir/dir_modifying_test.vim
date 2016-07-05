@@ -4,7 +4,6 @@ function! s:setup_script_vars()
 	let s:static_data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
 		let s:static_empty_dir= s:static_data_dir.get_contained_dir('empty dir')
 	let s:data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('test_data')
-		let s:after_dir= s:data_dir.get_contained_dir('after')
 endfunction
 
 function! s:Setup()
@@ -14,9 +13,6 @@ function! s:Setup()
 		Assert! s:static_empty_dir.exists()
 	Assert! !s:data_dir.exists()
 	call s:data_dir.create()
-		Assert! !s:after_dir.exists()
-		call s:after_dir.create()
-		Assert! s:after_dir.exists()
 endfunction
 
 function! s:safe_teardown()
