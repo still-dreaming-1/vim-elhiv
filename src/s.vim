@@ -20,6 +20,10 @@ function! L_s(str)
 		return l_s#new(self.str).starts_with(a:str)
 	endfunction
 
+	function! s.skip(count)
+		return L_s(self.str[a:count : ])
+	endfunction
+
 	function! s.remove_end()
 		return L_s(l_s#new(self.str).remove_end().str)
 	endfunction

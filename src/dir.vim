@@ -20,13 +20,11 @@ function! L_dir(path)
 		return L_dir(contained_info.path)
 	endfunction
 
-
-	" implemented and have some tests, but not passing yet
 	function! dir.get_relative_dir(relative_path)
 		if L_s(a:relative_path).starts_with('../')
 			let parent= self.parent()
 			if len(a:relative_path) > 3
-				let parent_relative_path= ''
+				let parent_relative_path= L_s(a:relative_path).skip(3).str
 				return parent.get_relative_dir(parent_relative_path)
 			else
 				return parent

@@ -251,3 +251,31 @@ endfunction
 function! s:Test_before_last_when_str_is_empty()
 	AssertEquals('', L_s('').before_last('a').str)
 endfunction
+
+function! s:Test_skip_happy_path()
+	AssertEquals('defg', L_s('abcdefg').skip(3).str)
+endfunction
+
+function! s:Test_skip_0_does_not_change()
+	AssertEquals('abcdefg', L_s('abcdefg').skip(0).str)
+endfunction
+
+function! s:Test_skip_entire_length_of_string_returns_empty_s()
+	AssertEquals('', L_s('12345').skip(5).str)
+endfunction
+
+function! s:Test_skip_one_less_than_length_of_string()
+	AssertEquals('5', L_s('12345').skip(4).str)
+endfunction
+
+function! s:Test_skip_one_more_than_length_of_string_returns_empty_s()
+	AssertEquals('', L_s('12345').skip(6).str)
+endfunction
+
+function! s:Test_skip_0_on_empty_s_returns_empty_s()
+	AssertEquals('', L_s('').skip(0).str)
+endfunction
+
+function! s:Test_skip_1_on_empty_s_returns_empty_s()
+	AssertEquals('', L_s('').skip(1).str)
+endfunction
