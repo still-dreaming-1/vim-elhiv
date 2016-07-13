@@ -4,6 +4,14 @@ function! s:Test_path()
 	AssertEquals('/i_am_the_path', L_dir('/i_am_the_path').path)
 endfunction
 
+function! s:Test_name_with_simple_path()
+	AssertEquals('i_am_the_name', L_dir('/i_am_the_name').name)
+endfunction
+
+function! s:Test_name_with_complex_path()
+	AssertEquals('I am the name', L_dir('/i_am_the_parent/I am the name').name)
+endfunction
+
 function! s:Test_can_be_root()
 	let dir= L_dir('/')
 	AssertEquals('/', dir.path)
