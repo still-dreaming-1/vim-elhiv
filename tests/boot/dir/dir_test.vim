@@ -149,7 +149,7 @@ function! s:Test_get_parent_using_get_relative_dir()
 endfunction
 
 function! s:Test_get_dir_in_same_parent_using_get_relative_dir()
-	let file_dir= L_dir(g:elhiv_dir_path).get_contained_dir('tests/file')
+	let file_dir= L_dir(g:elhiv_dir_path).get_contained_dir('tests/boot/file')
 	let dir_dir= file_dir.get_relative_dir('../dir')
 	Assert L_s(dir_dir.path).ends_with('dir')
 	Comment dir_dir.path
