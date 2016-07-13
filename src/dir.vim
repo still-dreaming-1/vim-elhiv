@@ -2,6 +2,8 @@ function! L_dir(path)
 	let dir= {}
 	let dir.path= a:path
 	let dir._shell= L_shell()
+	let s_path= L_s(dir.path)
+	let dir.name= s_path.after_last('/').str
 
 	function! dir.exists()
 		return l_dir_info#new(self.path).exists
@@ -128,6 +130,13 @@ function! L_dir(path)
 		if !a:dir.exists()
 			call a:dir.create()
 		endif
+		for file in self.get_all_files()
+			let copy= a:dir.get_contained_file(file.name)
+			call file.copy_to(copy.path)
+		endfor
+		for my_dir in self.get_all_dirs()
+			call my_dir.copy_to(a:dir.get_contained_dir(my_dir.name))
+		endfor
 	endfunction
 
 	function! dir.delete()
