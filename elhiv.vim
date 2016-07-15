@@ -24,3 +24,4 @@ let s:tags_dir= s:src_dir.get_contained_dir('tags')
 for s:file_to_source in s:tags_dir.get_all_files()
 	execute 'source '.s:file_to_source.path
 endfor
+let g:elhiv_dir= L_dir(g:elhiv_dir_path)
