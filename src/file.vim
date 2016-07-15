@@ -51,5 +51,27 @@ function! L_file(path)
 		return readfile(self.path)
 	endfunction
 
+	" searches for all occurances of needle in the file contents. needle is not treated as a regular expression
+	function! file.find_all(needle)
+		let pos_list= []
+		let y= 0
+		for line in self.read_lines()
+			let start= 0
+			let y= y + 1
+			let line_len= len(line)
+			let x= 0
+			while x < line_len
+				let x= call stridx(line, needle, start)
+				if x > 0
+					add(pos_list, L_pos(x, y))
+				else
+					break
+				endif
+				let start= x + 1
+			endwhile
+		endfor
+		return pos_list
+	endfunction
+
 	return file
 endfunction
