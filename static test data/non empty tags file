@@ -1,0 +1,391 @@
+L_current_buffer	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_buffer.vim	/^function! L_current_buffer()$/;"	f
+L_current_cursor	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_cursor.vim	/^function! L_current_cursor()$/;"	f
+L_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^function! L_dir(path)$/;"	f
+L_file	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^function! L_file(path)$/;"	f
+L_global_log	/home/jesse/.config/nvim/plugged/vim-elhiv/src/global_log.vim	/^function! L_global_log()$/;"	f
+L_ls	/home/jesse/.config/nvim/plugged/vim-elhiv/src/ls.vim	/^function! L_ls(...)$/;"	f
+L_maps	/home/jesse/.config/nvim/plugged/vim-elhiv/src/maps.vim	/^function! L_maps()$/;"	f
+L_null	/home/jesse/.config/nvim/plugged/vim-elhiv/src/null.vim	/^function! L_null()$/;"	f
+L_s	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^function! L_s(str)$/;"	f
+L_shell	/home/jesse/.config/nvim/plugged/vim-elhiv/src/shell.vim	/^function! L_shell()$/;"	f
+L_shell_cmd_saver	/home/jesse/.config/nvim/plugged/vim-elhiv/src/shell_cmd_saver.vim	/^function! L_shell_cmd_saver()$/;"	f
+L_stopwatch	/home/jesse/.config/nvim/plugged/vim-elhiv/src/stopwatch.vim	/^function! L_stopwatch()$/;"	f
+L_tag	/home/jesse/.config/nvim/plugged/vim-elhiv/src/tags/tag.vim	/^function! L_tag()$/;"	f
+L_tags_file	/home/jesse/.config/nvim/plugged/vim-elhiv/src/tags/tags_file.vim	/^function! L_tags_file(path)$/;"	f
+L_time	/home/jesse/.config/nvim/plugged/vim-elhiv/src/time.vim	/^function! L_time()$/;"	f
+L_u_ls	/home/jesse/.config/nvim/plugged/vim-elhiv/src/u_ls.vim	/^function! L_u_ls(...)$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_2_parent_dirs_before_root.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_1_char.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_2_chars.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_3_chars.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension_and_ends_with_dot.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_parent_dir_not_root.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/non_empty_file.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension_and_a_dir_with_2_files_with_same_extension_and_dir_with_2_files_with_same_extension.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_empty_dir.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_empty_tags_file.vim	/^function! s:Setup()$/;"	f
+Setup	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_non_empty_tags_file.vim	/^function! s:Setup()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension_and_a_dir_with_2_files_with_same_extension_and_dir_with_2_files_with_same_extension.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_empty_tags_file.vim	/^function! s:Teardown()$/;"	f
+Teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_non_empty_tags_file.vim	/^function! s:Teardown()$/;"	f
+Test_0_ends_with_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_0_ends_with_0()$/;"	f
+Test_0_not_ends_with_1	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_0_not_ends_with_1()$/;"	f
+Test_1_ends_with_1	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_1_ends_with_1()$/;"	f
+Test_1_file_with_js_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Test_1_file_with_js_file_extensions()$/;"	f
+Test_1_file_with_js_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Test_1_file_with_js_file_extensions()$/;"	f
+Test_1_file_with_txt_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Test_1_file_with_txt_file_extensions()$/;"	f
+Test_1_file_with_txt_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Test_1_file_with_txt_file_extensions()$/;"	f
+Test_1_file_with_txt_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Test_1_file_with_txt_file_extensions()$/;"	f
+Test_1_file_with_txt_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Test_1_file_with_txt_file_extensions()$/;"	f
+Test_1_not_ends_with_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_1_not_ends_with_0()$/;"	f
+Test_2_files_with_js_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_2_files_with_js_file_extensions()$/;"	f
+Test_2_files_with_js_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension.vim	/^function! s:Test_2_files_with_js_file_extensions()$/;"	f
+Test_add_1_value	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_add_1_value()$/;"	f
+Test_add_1_value	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_add_1_value()$/;"	f
+Test_add_2_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_add_2_values()$/;"	f
+Test_add_2_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_add_2_values()$/;"	f
+Test_add_duplicate_values_ignored	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_add_duplicate_values_ignored()$/;"	f
+Test_after_last_when_multiple_single_char_search	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_after_last_when_multiple_single_char_search()$/;"	f
+Test_after_last_when_nothing_after_last	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_after_last_when_nothing_after_last()$/;"	f
+Test_after_last_when_one_single_char_search	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_after_last_when_one_single_char_search()$/;"	f
+Test_after_last_when_search_not_found	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_after_last_when_search_not_found()$/;"	f
+Test_after_last_when_str_is_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_after_last_when_str_is_empty()$/;"	f
+Test_before_last_when_multiple_single_char_search	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_before_last_when_multiple_single_char_search()$/;"	f
+Test_before_last_when_nothing_before_last	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_before_last_when_nothing_before_last()$/;"	f
+Test_before_last_when_one_single_char_search	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_before_last_when_one_single_char_search()$/;"	f
+Test_before_last_when_search_not_found	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_before_last_when_search_not_found()$/;"	f
+Test_before_last_when_str_is_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_before_last_when_str_is_empty()$/;"	f
+Test_before_run_last_cmd_is_null	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/shell_cmd_saver_test.vim	/^function! s:Test_before_run_last_cmd_is_null()$/;"	f
+Test_bottom_dir_get_files_with_extension_recursive_js	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension_and_a_dir_with_2_files_with_same_extension_and_dir_with_2_files_with_same_extension.vim	/^function! s:Test_bottom_dir_get_files_with_extension_recursive_js()$/;"	f
+Test_can_add_duplicate_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_can_add_duplicate_values()$/;"	f
+Test_can_be_root	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_can_be_root()$/;"	f
+Test_can_create_with_duplicate_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_can_create_with_duplicate_values()$/;"	f
+Test_child_not_subdir_of_parent_when_parent_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_child_not_subdir_of_parent_when_parent_contains_no_dirs()$/;"	f
+Test_child_not_subdir_of_parent_when_parent_only_contains_other_children	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_child_not_subdir_of_parent_when_parent_only_contains_other_children()$/;"	f
+Test_contained_dir_has_correct_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_contained_dir_has_correct_path()$/;"	f
+Test_contained_file_has_correct_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_contained_file_has_correct_path()$/;"	f
+Test_contains_1_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_contains_1_dir()$/;"	f
+Test_contains_1_non_recursive_file	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_contains_1_non_recursive_file()$/;"	f
+Test_contains_2_files	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Test_contains_2_files()$/;"	f
+Test_contains_2_files_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Test_contains_2_files_recursive()$/;"	f
+Test_contains_2_recursive_files	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_contains_2_recursive_files()$/;"	f
+Test_contains_case_sensitive	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_contains_case_sensitive()$/;"	f
+Test_contains_case_sensitive	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_contains_case_sensitive()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension.vim	/^function! s:Test_contains_no_dirs()$/;"	f
+Test_contains_single_value	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_contains_single_value()$/;"	f
+Test_contains_single_value	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_contains_single_value()$/;"	f
+Test_contains_the_lines	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/non_empty_file.vim	/^function! s:Test_contains_the_lines()$/;"	f
+Test_contains_two_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_contains_two_values()$/;"	f
+Test_contains_two_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_contains_two_values()$/;"	f
+Test_contains_when_searching_for_middle_of_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_contains_when_searching_for_middle_of_string()$/;"	f
+Test_contains_when_searching_for_the_entire_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_contains_when_searching_for_the_entire_string()$/;"	f
+Test_contains_when_searching_for_the_only_char	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_contains_when_searching_for_the_only_char()$/;"	f
+Test_copy_and_delete	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Test_copy_and_delete()$/;"	f
+Test_copy_and_delete	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Test_copy_and_delete()$/;"	f
+Test_copy_empty_dir_and_delete	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:Test_copy_empty_dir_and_delete()$/;"	f
+Test_create_from_list_ignores_duplicates	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_create_from_list_ignores_duplicates()$/;"	f
+Test_create_from_list_with_2_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_create_from_list_with_2_values()$/;"	f
+Test_create_from_list_with_2_values	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_create_from_list_with_2_values()$/;"	f
+Test_create_no_recursion_and_delete	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:Test_create_no_recursion_and_delete()$/;"	f
+Test_dir_contains_file_path_recursive_for_sub_file	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_dir_contains_file_path_recursive_for_sub_file()$/;"	f
+Test_empty_dir_not_exists	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_empty_dir_not_exists()$/;"	f
+Test_empty_not_contains	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_empty_not_contains()$/;"	f
+Test_empty_not_contains	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_empty_not_contains()$/;"	f
+Test_ends_with_last_2_chars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_ends_with_last_2_chars()$/;"	f
+Test_ends_with_last_char	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_ends_with_last_char()$/;"	f
+Test_ends_with_self	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_ends_with_self()$/;"	f
+Test_escape_space	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_escape_space()$/;"	f
+Test_escape_space_between_two_words	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_escape_space_between_two_words()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_2_parent_dirs_before_root.vim	/^function! s:Test_extension()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_1_char.vim	/^function! s:Test_extension()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_2_chars.vim	/^function! s:Test_extension()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_3_chars.vim	/^function! s:Test_extension()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension.vim	/^function! s:Test_extension()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension_and_ends_with_dot.vim	/^function! s:Test_extension()$/;"	f
+Test_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_parent_dir_not_root.vim	/^function! s:Test_extension()$/;"	f
+Test_file	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/current_buffer_test.vim	/^function! s:Test_file()$/;"	f
+Test_file_has_the_line	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Test_file_has_the_line()$/;"	f
+Test_file_has_the_line	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Test_file_has_the_line()$/;"	f
+Test_file_is_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Test_file_is_empty()$/;"	f
+Test_file_is_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Test_file_is_empty()$/;"	f
+Test_file_not_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Test_file_not_empty()$/;"	f
+Test_file_not_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Test_file_not_empty()$/;"	f
+Test_files_are_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_files_are_empty()$/;"	f
+Test_files_are_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Test_files_are_empty()$/;"	f
+Test_files_are_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Test_files_are_empty()$/;"	f
+Test_files_are_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension.vim	/^function! s:Test_files_are_empty()$/;"	f
+Test_get_all_file_info_when_contains_one_file	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:Test_get_all_file_info_when_contains_one_file()$/;"	f
+Test_get_all_file_info_when_contains_two_files	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:Test_get_all_file_info_when_contains_two_files()$/;"	f
+Test_get_all_file_info_when_empty_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:Test_get_all_file_info_when_empty_dir()$/;"	f
+Test_get_all_files_when_1_file	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:Test_get_all_files_when_1_file()$/;"	f
+Test_get_all_files_when_2_files	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:Test_get_all_files_when_2_files()$/;"	f
+Test_get_dir_in_same_parent_using_get_relative_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_get_dir_in_same_parent_using_get_relative_dir()$/;"	f
+Test_get_parent_using_get_relative_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_get_parent_using_get_relative_dir()$/;"	f
+Test_has_subdir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_has_subdir()$/;"	f
+Test_home_dir_exists	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_home_dir_exists()$/;"	f
+Test_is_subdir_of	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_is_subdir_of()$/;"	f
+Test_len_of_empty_string_is_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_len_of_empty_string_is_0()$/;"	f
+Test_len_of_longer_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_len_of_longer_string()$/;"	f
+Test_len_of_string_with_1_char	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_len_of_string_with_1_char()$/;"	f
+Test_milliseconds_since_epoch	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/time_test.vim	/^function! s:Test_milliseconds_since_epoch()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_2_parent_dirs_before_root.vim	/^function! s:Test_name()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_1_char.vim	/^function! s:Test_name()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_2_chars.vim	/^function! s:Test_name()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_3_chars.vim	/^function! s:Test_name()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension.vim	/^function! s:Test_name()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension_and_ends_with_dot.vim	/^function! s:Test_name()$/;"	f
+Test_name	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_parent_dir_not_root.vim	/^function! s:Test_name()$/;"	f
+Test_name_with_complex_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_name_with_complex_path()$/;"	f
+Test_name_with_simple_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_name_with_simple_path()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_2_parent_dirs_before_root.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_1_char.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_2_chars.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_3_chars.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension_and_ends_with_dot.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_name_without_extension	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_parent_dir_not_root.vim	/^function! s:Test_name_without_extension()$/;"	f
+Test_new	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_new()$/;"	f
+Test_new	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_new()$/;"	f
+Test_new_from_empty_list	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_new_from_empty_list()$/;"	f
+Test_new_from_empty_list	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_new_from_empty_list()$/;"	f
+Test_new_from_list_with_1_value	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_new_from_list_with_1_value()$/;"	f
+Test_new_from_list_with_1_value	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_new_from_list_with_1_value()$/;"	f
+Test_no_files_with_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Test_no_files_with_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_appen_2_lines_to_file.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_append_line_to_file.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_txt_extension.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_1_has_an_extension.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_different_extension.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_files_with_other_file_extensions	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension.vim	/^function! s:Test_no_files_with_other_file_extensions()$/;"	f
+Test_no_matching_file_extension_when_missing_dot	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_no_extension.vim	/^function! s:Test_no_matching_file_extension_when_missing_dot()$/;"	f
+Test_no_parent_when_child_is_dot	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_no_parent_when_child_is_dot()$/;"	f
+Test_no_parent_when_child_is_dot_slash	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_no_parent_when_child_is_dot_slash()$/;"	f
+Test_no_parent_when_child_short	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_no_parent_when_child_short()$/;"	f
+Test_non_existent_dir_not_has_subdir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_non_existent_dir_not_has_subdir()$/;"	f
+Test_non_existent_file_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_empty_dir.vim	/^function! s:Test_non_existent_file_not_readable()$/;"	f
+Test_non_existent_file_not_writable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_empty_dir.vim	/^function! s:Test_non_existent_file_not_writable()$/;"	f
+Test_not_contains	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_contains()$/;"	f
+Test_not_contains_when_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_contains_when_empty()$/;"	f
+Test_not_empty	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/non_empty_file.vim	/^function! s:Test_not_empty()$/;"	f
+Test_not_ends_with_last_char_when_different_capitalization	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_ends_with_last_char_when_different_capitalization()$/;"	f
+Test_not_ends_with_longer_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_ends_with_longer_string()$/;"	f
+Test_not_ends_with_start	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_ends_with_start()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_2_parent_dirs_before_root.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_1_char.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_2_chars.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_3_chars.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension_and_ends_with_dot.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_parent_dir_not_root.vim	/^function! s:Test_not_readable()$/;"	f
+Test_not_starts_with_ending	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_starts_with_ending()$/;"	f
+Test_not_starts_with_first_char_when_different_capitalization	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_starts_with_first_char_when_different_capitalization()$/;"	f
+Test_not_starts_with_longer_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_not_starts_with_longer_string()$/;"	f
+Test_not_subdir_of_non_existent_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_not_subdir_of_non_existent_dir()$/;"	f
+Test_null_equals_null	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/null_test.vim	/^function! s:Test_null_equals_null()$/;"	f
+Test_null_not_equals_empty_dictionary	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/null_test.vim	/^function! s:Test_null_not_equals_empty_dictionary()$/;"	f
+Test_only_contains_number_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_only_contains_number_0()$/;"	f
+Test_only_contains_number_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_only_contains_number_0()$/;"	f
+Test_only_contains_number_1	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_only_contains_number_1()$/;"	f
+Test_only_contains_number_1	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_only_contains_number_1()$/;"	f
+Test_only_contains_str_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_only_contains_str_0()$/;"	f
+Test_only_contains_str_0	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_only_contains_str_0()$/;"	f
+Test_only_contains_str_1	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/ls_test.vim	/^function! s:Test_only_contains_str_1()$/;"	f
+Test_only_contains_str_1	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/u_ls_test.vim	/^function! s:Test_only_contains_str_1()$/;"	f
+Test_parent	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_parent()$/;"	f
+Test_parent_dir_contains_file_path_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/non_empty_file.vim	/^function! s:Test_parent_dir_contains_file_path_recursive()$/;"	f
+Test_parent_dir_not_contains_file_path_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_empty_dir.vim	/^function! s:Test_parent_dir_not_contains_file_path_recursive()$/;"	f
+Test_parent_is_dot	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_parent_is_dot()$/;"	f
+Test_parent_not_has_subdir_when_only_has_other_children	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_parent_not_has_subdir_when_only_has_other_children()$/;"	f
+Test_parent_not_has_subdir_when_parent_contains_no_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_parent_not_has_subdir_when_parent_contains_no_dirs()$/;"	f
+Test_parent_when_child_ends_with_slash	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_parent_when_child_ends_with_slash()$/;"	f
+Test_parent_with_no_starting_slash	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_parent_with_no_starting_slash()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_2_parent_dirs_before_root.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_1_char.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_2_chars.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_extension_has_3_chars.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_no_extension_and_ends_with_dot.vim	/^function! s:Test_path()$/;"	f
+Test_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/file/when_parent_dir_not_root.vim	/^function! s:Test_path()$/;"	f
+Test_readable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/non_empty_file.vim	/^function! s:Test_readable()$/;"	f
+Test_remove_end_of_2_char_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_end_of_2_char_string()$/;"	f
+Test_remove_end_of_3_char_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_end_of_3_char_string()$/;"	f
+Test_remove_end_of_single_char_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_end_of_single_char_string()$/;"	f
+Test_remove_start_long_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_start_long_string()$/;"	f
+Test_remove_start_of_1_char_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_start_of_1_char_string()$/;"	f
+Test_remove_start_of_2_char_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_start_of_2_char_string()$/;"	f
+Test_remove_start_of_empty_str	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_remove_start_of_empty_str()$/;"	f
+Test_ridx	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_ridx()$/;"	f
+Test_ridx_with_multi_char_str	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_ridx_with_multi_char_str()$/;"	f
+Test_ridx_with_nothing_before_match	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_ridx_with_nothing_before_match()$/;"	f
+Test_root_has_no_parent	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_root_has_no_parent()$/;"	f
+Test_run_sets_last_cmd	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/shell_cmd_saver_test.vim	/^function! s:Test_run_sets_last_cmd()$/;"	f
+Test_short_parent	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_short_parent()$/;"	f
+Test_short_parent_when_child_ends_with_slash	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_test.vim	/^function! s:Test_short_parent_when_child_ends_with_slash()$/;"	f
+Test_skip_0_does_not_change	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_0_does_not_change()$/;"	f
+Test_skip_0_on_empty_s_returns_empty_s	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_0_on_empty_s_returns_empty_s()$/;"	f
+Test_skip_1_on_empty_s_returns_empty_s	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_1_on_empty_s_returns_empty_s()$/;"	f
+Test_skip_entire_length_of_string_returns_empty_s	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_entire_length_of_string_returns_empty_s()$/;"	f
+Test_skip_happy_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_happy_path()$/;"	f
+Test_skip_one_less_than_length_of_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_one_less_than_length_of_string()$/;"	f
+Test_skip_one_more_than_length_of_string_returns_empty_s	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_skip_one_more_than_length_of_string_returns_empty_s()$/;"	f
+Test_starts_with_first_2_chars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_starts_with_first_2_chars()$/;"	f
+Test_starts_with_first_char	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_starts_with_first_char()$/;"	f
+Test_starts_with_self	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_starts_with_self()$/;"	f
+Test_stopwatch	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/stopwatch_test.vim	/^function! s:Test_stopwatch()$/;"	f
+Test_str	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_str()$/;"	f
+Test_sub_dir_contains_file_path_recursive_for_sub_file	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:Test_sub_dir_contains_file_path_recursive_for_sub_file()$/;"	f
+Test_trim_2_spaces_from_beginning	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_2_spaces_from_beginning()$/;"	f
+Test_trim_2_spaces_from_beginning_and_end	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_2_spaces_from_beginning_and_end()$/;"	f
+Test_trim_2_spaces_from_end	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_2_spaces_from_end()$/;"	f
+Test_trim_2_spaces_to_empty_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_2_spaces_to_empty_string()$/;"	f
+Test_trim_empty_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_empty_string()$/;"	f
+Test_trim_line_feed_from_beginning	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_line_feed_from_beginning()$/;"	f
+Test_trim_line_feed_from_end	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_line_feed_from_end()$/;"	f
+Test_trim_space_from_beginning	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_space_from_beginning()$/;"	f
+Test_trim_space_from_beginning_and_end	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_space_from_beginning_and_end()$/;"	f
+Test_trim_space_from_end	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_space_from_end()$/;"	f
+Test_trim_space_to_empty_string	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_space_to_empty_string()$/;"	f
+Test_trim_when_nothing_to_change	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_when_nothing_to_change()$/;"	f
+Test_trim_when_nothing_to_change_but_there_are_spaces_close_to_the_start_and_end	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/s_test.vim	/^function! s:Test_trim_when_nothing_to_change_but_there_are_spaces_close_to_the_start_and_end()$/;"	f
+Test_writable	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/non_empty_file.vim	/^function! s:Test_writable()$/;"	f
+buf.append_line	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_buffer.vim	/^	function! buf.append_line(line_or_list)$/;"	f
+buf.dir	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_buffer.vim	/^	function! buf.dir()$/;"	f
+buf.file	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_buffer.vim	/^	function! buf.file()$/;"	f
+create_script_vars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:create_script_vars()$/;"	f
+create_script_vars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension_and_a_dir_with_2_files_with_same_extension_and_dir_with_2_files_with_same_extension.vim	/^function! s:create_script_vars()$/;"	f
+create_script_vars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:create_script_vars()$/;"	f
+cursor.char	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_cursor.vim	/^	function! cursor.char()$/;"	f
+cursor.word	/home/jesse/.config/nvim/plugged/vim-elhiv/src/current_cursor.vim	/^	function! cursor.word()$/;"	f
+dir._get_files_with_extension_recursive_using_find_implementation	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir._get_files_with_extension_recursive_using_find_implementation(extension)$/;"	f
+dir.contains_file_path_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.contains_file_path_recursive(path)$/;"	f
+dir.copy_to	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.copy_to(dir)$/;"	f
+dir.create	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.create()$/;"	f
+dir.delete	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.delete()$/;"	f
+dir.exists	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.exists()$/;"	f
+dir.get_all_dirs	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_all_dirs()$/;"	f
+dir.get_all_dirs_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_all_dirs_recursive()$/;"	f
+dir.get_all_file_info	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_dir_info.vim	/^	function! dir.get_all_file_info()$/;"	f
+dir.get_all_files	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_all_files()$/;"	f
+dir.get_all_files_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_all_files_recursive()$/;"	f
+dir.get_contained_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_contained_dir(name)$/;"	f
+dir.get_contained_dir_info	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_dir_info.vim	/^	function! dir.get_contained_dir_info(name)$/;"	f
+dir.get_contained_file	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_contained_file(name)$/;"	f
+dir.get_contained_file_info	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_dir_info.vim	/^	function! dir.get_contained_file_info(name)$/;"	f
+dir.get_files_with_extension_recursive	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_files_with_extension_recursive(extension)$/;"	f
+dir.get_relative_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.get_relative_dir(relative_path)$/;"	f
+dir.has_subdir	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.has_subdir(dir)$/;"	f
+dir.is_subdir_of	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.is_subdir_of(dir)$/;"	f
+dir.parent	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_dir_info.vim	/^	function! dir.parent()$/;"	f
+dir.parent	/home/jesse/.config/nvim/plugged/vim-elhiv/src/dir.vim	/^	function! dir.parent()$/;"	f
+file.append_line	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.append_line(str)$/;"	f
+file.copy_to	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.copy_to(path)$/;"	f
+file.create	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.create()$/;"	f
+file.delete	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.delete()$/;"	f
+file.edit	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.edit()$/;"	f
+file.read_lines	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.read_lines()$/;"	f
+file.readable	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.readable()$/;"	f
+file.size	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.size()$/;"	f
+file.source	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.source()$/;"	f
+file.writable	/home/jesse/.config/nvim/plugged/vim-elhiv/src/file.vim	/^	function! file.writable()$/;"	f
+g:elhiv_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let g:elhiv_dir= L_dir(g:elhiv_dir_path)$/;"	v
+g:elhiv_dir_path	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let g:elhiv_dir_path= s:elhiv_dir_info.path$/;"	v
+g:elhiv_profiler	/home/jesse/.config/nvim/plugged/vim-elhiv/src/profiler.vim	/^		let g:elhiv_profiler= l_profiler#new()$/;"	v
+global_log	/home/jesse/.config/nvim/plugged/vim-elhiv/src/global_log.vim	/^	let global_log= {}$/;"	v
+global_log.log	/home/jesse/.config/nvim/plugged/vim-elhiv/src/global_log.vim	/^	function! global_log.log(line)$/;"	f
+global_log.log_is_enabled	/home/jesse/.config/nvim/plugged/vim-elhiv/src/global_log.vim	/^	function! global_log.log_is_enabled()$/;"	f
+l#log	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l.vim	/^function! l#log(line)$/;"	f
+l_dir_info#new	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_dir_info.vim	/^function! l_dir_info#new(path)$/;"	f
+l_execute#leader_with	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_execute.vim	/^function! l_execute#leader_with(suffix)$/;"	f
+l_file_info#new	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_file_info.vim	/^function! l_file_info#new(path)$/;"	f
+l_null#new	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_null.vim	/^function! l_null#new()$/;"	f
+l_profiler#new	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_profiler.vim	/^function! l_profiler#new()$/;"	f
+l_s#new	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_s.vim	/^function! l_s#new(str)$/;"	f
+l_shell#new	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_shell.vim	/^function! l_shell#new()$/;"	f
+l_type#dictionary	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l_type.vim	/^function! l_type#dictionary()$/;"	f
+l_type#float	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l_type.vim	/^function! l_type#float()$/;"	f
+l_type#fun	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l_type.vim	/^function! l_type#fun()$/;"	f
+l_type#list	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l_type.vim	/^function! l_type#list()$/;"	f
+l_type#num	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l_type.vim	/^function! l_type#num()$/;"	f
+l_type#string	/home/jesse/.config/nvim/plugged/vim-elhiv/src/l_type.vim	/^function! l_type#string()$/;"	f
+ls.add	/home/jesse/.config/nvim/plugged/vim-elhiv/src/ls.vim	/^	function! ls.add(value)$/;"	f
+ls.contains	/home/jesse/.config/nvim/plugged/vim-elhiv/src/ls.vim	/^	function! ls.contains(value)$/;"	f
+ls.len	/home/jesse/.config/nvim/plugged/vim-elhiv/src/ls.vim	/^	function! ls.len()$/;"	f
+maps.normal_mode_map_exists_from	/home/jesse/.config/nvim/plugged/vim-elhiv/src/maps.vim	/^	function! maps.normal_mode_map_exists_from(str)$/;"	f
+maps.normal_mode_map_exists_to	/home/jesse/.config/nvim/plugged/vim-elhiv/src/maps.vim	/^	function! maps.normal_mode_map_exists_to(str)$/;"	f
+me.run	/home/jesse/.config/nvim/plugged/vim-elhiv/src/shell.vim	/^	function me.run(command)$/;"	f
+profiler#start	/home/jesse/.config/nvim/plugged/vim-elhiv/src/profiler.vim	/^function! profiler#start(log_path, dir_with_files_to_profile)$/;"	f
+profiler#stop	/home/jesse/.config/nvim/plugged/vim-elhiv/src/profiler.vim	/^function! profiler#stop()$/;"	f
+profiler.start	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_profiler.vim	/^	function! profiler.start(log_path, dir_with_files_to_profile)$/;"	f
+profiler.stop	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_profiler.vim	/^	function! profiler.stop()$/;"	f
+s.after_last	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.after_last(str)$/;"	f
+s.before_last	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.before_last(str)$/;"	f
+s.contains	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.contains(needle)$/;"	f
+s.ends_with	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.ends_with(needle)$/;"	f
+s.escape	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.escape(chars)$/;"	f
+s.remove_end	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_s.vim	/^	function! s.remove_end()$/;"	f
+s.remove_end	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.remove_end()$/;"	f
+s.remove_start	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.remove_start()$/;"	f
+s.ridx	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_s.vim	/^	function! s.ridx(needle, ...)$/;"	f
+s.ridx	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.ridx(needle, ...)$/;"	f
+s.skip	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.skip(count)$/;"	f
+s.starts_with	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_s.vim	/^	function! s.starts_with(str)$/;"	f
+s.starts_with	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.starts_with(str)$/;"	f
+s.trim	/home/jesse/.config/nvim/plugged/vim-elhiv/src/s.vim	/^	function! s.trim()$/;"	f
+s:current_path	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/current_buffer_test.vim	/^let s:current_path= expand('<sfile>')$/;"	v
+s:current_script_path	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let s:current_script_path= expand('<sfile>')$/;"	v
+s:elhiv_dir_info	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let s:elhiv_dir_info= l_dir_info#new(s:current_script_path).parent()$/;"	v
+s:src_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let s:src_dir= L_dir(s:src_dir_info.path)$/;"	v
+s:src_dir_info	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let s:src_dir_info= s:elhiv_dir_info.get_contained_dir_info('src')$/;"	v
+s:tags_dir	/home/jesse/.config/nvim/plugged/vim-elhiv/elhiv.vim	/^let s:tags_dir= s:src_dir.get_contained_dir('tags')$/;"	v
+safe_tear_down	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/bootstrap/l_dir_info_test.vim	/^function! s:safe_tear_down()$/;"	f
+safe_teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:safe_teardown()$/;"	f
+safe_teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_1_file_with_extension_and_another_dir_with_same_extension.vim	/^function! s:safe_teardown()$/;"	f
+safe_teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/integration/when_dir_has_2_files_with_same_extension_and_a_dir_with_2_files_with_same_extension_and_dir_with_2_files_with_same_extension.vim	/^function! s:safe_teardown()$/;"	f
+safe_teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_empty_tags_file.vim	/^function! s:safe_teardown()$/;"	f
+safe_teardown	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_non_empty_tags_file.vim	/^function! s:safe_teardown()$/;"	f
+saver.run	/home/jesse/.config/nvim/plugged/vim-elhiv/src/shell_cmd_saver.vim	/^	function! saver.run(cmd)$/;"	f
+setup_script_vars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/boot/dir/dir_modifying_test.vim	/^function! s:setup_script_vars()$/;"	f
+setup_script_vars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_empty_tags_file.vim	/^function! s:setup_script_vars()$/;"	f
+setup_script_vars	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_non_empty_tags_file.vim	/^function! s:setup_script_vars()$/;"	f
+shell.run	/home/jesse/.config/nvim/plugged/vim-elhiv/autoload/l_shell.vim	/^	function! shell.run(cmd)$/;"	f
+stopwatch.start	/home/jesse/.config/nvim/plugged/vim-elhiv/src/stopwatch.vim	/^	function! stopwatch.start()$/;"	f
+stopwatch.stop	/home/jesse/.config/nvim/plugged/vim-elhiv/src/stopwatch.vim	/^	function! stopwatch.stop()$/;"	f
+tag.some_method	/home/jesse/.config/nvim/plugged/vim-elhiv/src/tags/tag.vim	/^	function! tag.some_method()$/;"	f
+tags_file.get_tags	/home/jesse/.config/nvim/plugged/vim-elhiv/src/tags/tags_file.vim	/^	function! tags_file.get_tags(keyword)$/;"	f
+test_it_has_no_tags	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_empty_tags_file.vim	/^function! s:test_it_has_no_tags()$/;"	f
+test_it_has_no_tags	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/integration/when_non_empty_tags_file.vim	/^function! s:test_it_has_no_tags()$/;"	f
+test_something	/home/jesse/.config/nvim/plugged/vim-elhiv/tests/tags/tag_test.vim	/^function! s:test_something()$/;"	f
+time.milliseconds_since_epoch	/home/jesse/.config/nvim/plugged/vim-elhiv/src/time.vim	/^	function! time.milliseconds_since_epoch()$/;"	f
+u_ls.add	/home/jesse/.config/nvim/plugged/vim-elhiv/src/u_ls.vim	/^	function! u_ls.add(value)$/;"	f
+u_ls.contains	/home/jesse/.config/nvim/plugged/vim-elhiv/src/u_ls.vim	/^	function! u_ls.contains(value)$/;"	f
+u_ls.extend	/home/jesse/.config/nvim/plugged/vim-elhiv/src/u_ls.vim	/^	function! u_ls.extend(list_of_values)$/;"	f
+u_ls.len	/home/jesse/.config/nvim/plugged/vim-elhiv/src/u_ls.vim	/^	function! u_ls.len()$/;"	f
