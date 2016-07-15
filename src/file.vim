@@ -61,7 +61,7 @@ function! L_file(path)
 			let line_len= len(line)
 			let x= 0
 			while x < line_len
-				let x= call stridx(line, needle, start)
+				let x= stridx(line, a:needle, start)
 				if x > 0
 					add(pos_list, L_pos(x, y))
 				else
