@@ -19,3 +19,8 @@ let g:elhiv_dir_path= s:elhiv_dir_info.path
 " 'languages' built on top of the base 'language' / boot. Since the boot has
 " been sourced, we are now free to use it to help us source the other
 " 'languages'.
+let s:src_dir= L_dir(s:src_dir_info.path)
+let s:tags_dir= s:src_dir.get_contained_dir('tags')
+for s:file_to_source in s:tags_dir.get_all_files()
+	execute 'source '.s:file_to_source.path
+endfor
