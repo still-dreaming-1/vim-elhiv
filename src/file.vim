@@ -63,7 +63,7 @@ function! L_file(path)
 			while x < line_len
 				let x= stridx(line, a:needle, start)
 				if x > 0
-					add(pos_list, L_pos(x, y))
+					call add(pos_list, L_pos(x + 1, y))
 				else
 					break
 				endif
