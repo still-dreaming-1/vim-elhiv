@@ -279,3 +279,19 @@ endfunction
 function! s:Test_skip_1_on_empty_s_returns_empty_s()
 	AssertEquals('', L_s('').skip(1).str)
 endfunction
+
+function! s:Test_get_no_magic_of_empty_s_is_backslash_V()
+	AssertEquals('\V', L_s('').get_no_magic().str)
+endfunction
+
+function! s:Test_get_no_magic_of_string_with_interesting_chars_is_same_with_is_backslash_V_at_beginning()
+	AssertEquals('\V[1]%*()abc', L_s('[1]%*()abc').get_no_magic().str)
+endfunction
+
+function! s:Test_get_no_magic_escapes_backslash()
+	AssertEquals('\V\\', L_s('\').get_no_magic().str)
+endfunction
+
+function! s:Test_get_no_magic_escapes_backslash_when_backslash_in_middle_of_string()
+	AssertEquals('\Vabc\\123', L_s('abc\123').get_no_magic().str)
+endfunction

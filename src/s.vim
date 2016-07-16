@@ -80,5 +80,12 @@ function! L_s(str)
 		return L_s(self.str[0 : i])
 	endfunction
 
+	" this helps when you are using strings that are interpreted as Vim patterns, but you don't want them to be
+	function! s.get_no_magic()
+		let escaped_string= escape(self.str, '\')
+		" see :h \V for info about this very nomagic trick
+		return L_s('\V'.escaped_string)
+	endfunction
+
 	return s
 endfunction
