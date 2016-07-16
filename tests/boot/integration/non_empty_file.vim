@@ -28,3 +28,7 @@ endfunction
 function! s:Test_parent_dir_contains_file_path_recursive()
 	Assert s:static_data_dir.contains_file_path_recursive(s:file.path)
 endfunction
+
+function! s:Test_find_all_for_char_only_on_line_1()
+	AssertEquals(s:file.find_all('?'), [L_pos(2, 1)])
+endfunction
