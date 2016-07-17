@@ -62,7 +62,7 @@ function! L_file(path)
 			let x= 0
 			while x < line_len
 				let x= stridx(line, a:needle, start)
-				if x > 0
+				if x >= 0
 					call add(pos_list, L_pos(x + 1, y))
 				else
 					break

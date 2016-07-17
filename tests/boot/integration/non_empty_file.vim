@@ -32,3 +32,11 @@ endfunction
 function! s:Test_find_all_for_char_only_on_line_1()
 	AssertEquals(s:file.find_all('?'), [L_pos(2, 1)])
 endfunction
+
+function! s:Test_find_all_for_char_only_on_line_2()
+	AssertEquals(s:file.find_all('{'), [L_pos(26, 2)])
+endfunction
+
+function! s:Test_find_all_for_char_only_on_last_line()
+	AssertEquals(s:file.find_all('}'), [L_pos(1, 3)])
+endfunction
