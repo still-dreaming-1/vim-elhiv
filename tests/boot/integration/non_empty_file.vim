@@ -29,6 +29,10 @@ function! s:Test_parent_dir_contains_file_path_recursive()
 	Assert s:static_data_dir.contains_file_path_recursive(s:file.path)
 endfunction
 
+function! s:Test_find_all_for_first_char_on_line_1_when_it_is_the_only_instance_of_that_char_in_the_file()
+	AssertEquals(s:file.find_all('<'), [L_pos(1, 1)])
+endfunction
+
 function! s:Test_find_all_for_char_only_on_line_1()
 	AssertEquals(s:file.find_all('?'), [L_pos(2, 1)])
 endfunction
@@ -39,4 +43,15 @@ endfunction
 
 function! s:Test_find_all_for_char_only_on_last_line()
 	AssertEquals(s:file.find_all('}'), [L_pos(1, 3)])
+endfunction
+
+function! s:Test_find_all_when_found_twice()
+	let pos_list= s:file.find_all('s')
+	AssertEquals(len(pos_list), 2)
+	let pos= pos_list[0]
+	AssertEquals(pos.y, 2)
+	AssertEquals(pos.x, 4)
+	let pos= pos_list[1]
+	AssertEquals(pos.y, 2)
+	AssertEquals(pos.x, 5)
 endfunction
