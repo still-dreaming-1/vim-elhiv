@@ -6,10 +6,10 @@ function! L_tags_file(path)
 		let file= L_file(self.path)
 		let tag_list= []
 		for pos in file.find_all(a:keyword)
-			if pos.x == 0
+			if pos.x == 1
 				let tag= L_tag()
-				tag.line_num= pos.y
-				add(tag_list, tag)
+				let tag.line_num= pos.y
+				call add(tag_list, tag)
 			endif
 		endfor
 		return tag_list
