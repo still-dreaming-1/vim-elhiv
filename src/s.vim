@@ -41,10 +41,10 @@ function! L_s(str)
 		return L_s(escape(self.str, a:chars))
 	endfunction
 
-	" returns an S with spaces and \n removed from the beginning and end
+	" returns an S with spaces, \n, and tabs removed from the beginning and end
 	function! s.trim()
 		let ret_s= L_s(self.str)
-		let chars_to_trim= [' ', "\n"]
+		let chars_to_trim= [' ', "\n", "\t"]
 		for char in chars_to_trim
 			while ret_s.starts_with(char)
 				let ret_s= ret_s.remove_start()

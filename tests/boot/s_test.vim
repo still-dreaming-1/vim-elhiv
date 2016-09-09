@@ -168,6 +168,14 @@ function! s:Test_trim_line_feed_from_beginning()
 	AssertEquals('no', L_s("\nno").trim().str)
 endfunction
 
+function! s:Test_trim_literal_tab_from_beginning()
+	AssertEquals('maybe', L_s('	maybe').trim().str)
+endfunction
+
+function! s:Test_trim_escaped_tab_from_beginning()
+	AssertEquals('maybe', L_s("\tmaybe").trim().str)
+endfunction
+
 function! s:Test_trim_line_feed_from_end()
 	AssertEquals('well', L_s("well\n").trim().str)
 endfunction
