@@ -65,6 +65,11 @@ function! s:Test_index_of_with_nothing_after_needle()
 	AssertEquals(8, s.index_of('/'))
 endfunction
 
+function! s:Test_index_of_when_needle_not_in_haystack()
+	let s= L_s('a')
+	AssertEquals(-1, s.index_of('b'))
+endfunction
+
 function! s:Test_ridx()
 	let s= L_s(';ok;there')
 	AssertEquals(3, s.ridx(';'))
