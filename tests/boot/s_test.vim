@@ -45,17 +45,37 @@ function! s:Test_not_contains_when_empty()
 	Assert !s.contains('1')
 endfunction
 
+function! s:Test_index_of()
+	let s= L_s('hello? where are you?')
+	AssertEquals(5, s.index_of('?'))
+endfunction
+
+function! s:Test_index_of_with_multi_char_needle()
+	let s= L_s('hello? where are you?')
+	AssertEquals(7, s.index_of('where'))
+endfunction
+
+function! s:Test_index_of_with_nothing_before_needle()
+	let s= L_s('/some dir/another dir/filename')
+	AssertEquals(0, s.index_of('/some'))
+endfunction
+
+function! s:Test_index_of_with_nothing_after_needle()
+	let s= L_s('some dir/')
+	AssertEquals(8, s.index_of('/'))
+endfunction
+
 function! s:Test_ridx()
 	let s= L_s(';ok;there')
 	AssertEquals(3, s.ridx(';'))
 endfunction
 
-function! s:Test_ridx_with_multi_char_str()
+function! s:Test_ridx_with_multi_char_needle()
 	let s= L_s(';ok;there')
 	AssertEquals(1, s.ridx('ok'))
 endfunction
 
-function! s:Test_ridx_with_nothing_before_match()
+function! s:Test_ridx_with_nothing_before_needle()
 	let s= L_s('/some dir/another dir/filename')
 	AssertEquals(0, s.ridx('/some'))
 endfunction
