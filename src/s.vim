@@ -64,6 +64,14 @@ function! L_s(str)
 		return L_s(self.str[1 : ])
 	endfunction
 
+	function! s.after(needle)
+		let i= self.index_of(a:needle)
+		if i == -1
+			return L_s('')
+		endif
+		return L_s(self.str[i + len(a:needle) : ])
+	endfunction
+
 	function! s.after_last(str)
 		let i= self.ridx(a:str)
 		if i == -1

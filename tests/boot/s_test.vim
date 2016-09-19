@@ -245,6 +245,18 @@ function! s:Test_trim_empty_string()
 	AssertEquals('', L_s('').trim().str)
 endfunction
 
+function! s:Test_after()
+	AssertEquals(' MyFunction($some_param, $function_name) {', L_s('public static function MyFunction($some_param, $function_name) {').after('function').str)
+endfunction
+
+function! s:Test_after_simple()
+	AssertEquals('b', L_s('ab').after('a').str)
+endfunction
+
+function! s:Test_after_when_need_not_contained()
+	AssertEquals('', L_s('ab').after('c').str)
+endfunction
+
 function! s:Test_after_last_when_multiple_single_char_search()
 	AssertEquals('filename', L_s('/some dir/another dir/filename').after_last('/').str)
 endfunction
