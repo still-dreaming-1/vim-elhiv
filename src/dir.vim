@@ -1,9 +1,9 @@
 function! L_dir(path)
-	let dir= {}
-	let dir.path= a:path
-	let dir._shell= L_shell()
-	let s_path= L_s(dir.path)
-	let dir.name= s_path.after_last('/').str
+	let dir = {}
+	let dir.path = a:path
+	let dir._shell = L_shell()
+	let s_path = L_s(dir.path)
+	let dir.name = s_path.after_last('/').str
 
 	function! dir.exists()
 		return l_dir_info#new(self.path).exists
@@ -105,7 +105,7 @@ function! L_dir(path)
 	function! dir.get_files_with_extension_recursive(extension)
 		return self._get_files_with_extension_recursive_using_find_implementation(a:extension)
 	endfunction
-	
+
 	" The current implementation proven to work and be less slow than the previous implementation. Still not as fast as I would like
 	function! dir._get_files_with_extension_recursive_using_find_implementation(extension)
 		"started from the implemenation of get_all_dirs(), which is not recursive
@@ -125,7 +125,7 @@ function! L_dir(path)
 	function! dir.create()
 		call self._shell.run('mkdir '.shellescape(self.path))
 	endfunction
-	
+
 	function! dir.copy_to(dir)
 		if !a:dir.exists()
 			call a:dir.create()
