@@ -388,3 +388,22 @@ endfunction
 function! s:Test_replace_non_existent_char_with_empty()
     AssertEquals('abcd', L_s('abcd').replace('f', '').str)
 endfunction
+
+function! s:Test_to_pascal_case()
+    Assert 'abcd' == 'ABCD'
+    Assert 'ABCD' == 'abcd'
+    Assert 'abcd' == 'abcd'
+    Assert 'abcd' ==# 'abcd'
+    Assert 'ABCD' ==# 'ABCD'
+    Assert L_s('B').to_pascal_case().str ==# 'B'
+    Assert L_s('').to_pascal_case().str ==# ''
+    Assert L_s('b').to_pascal_case().str ==# 'B'
+    Assert L_s('a').to_pascal_case().str ==# 'A'
+    Assert L_s('your').to_pascal_case().str ==# 'Your'
+    Assert L_s('yourMom').to_pascal_case().str ==# 'YourMom'
+    Assert L_s('YourMom').to_pascal_case().str ==# 'YourMom'
+    Assert L_s('yourmom').to_pascal_case().str ==# 'Yourmom'
+    Assert L_s('your_mom').to_pascal_case().str ==# 'YourMom'
+    Assert L_s('your_mommas_mom').to_pascal_case().str ==# 'YourMommasMom'
+    Assert L_s('Your_Mommas_Mom').to_pascal_case().str ==# 'YourMommasMom'
+endfunction

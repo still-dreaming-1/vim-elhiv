@@ -131,5 +131,23 @@ function! L_s(str)
         return result.replace(a:needle, a:new_needle, start_index + len(a:new_needle))
     endfunction
 
+    function! s.to_pascal_case()
+        let i = 0
+        let started_new_word = 1
+        let pascal_str = ''
+        while i < self.len
+            if started_new_word
+                let pascal_str .= toupper(self.str[i])
+                let started_new_word = 0
+            elseif self.str[i] ==# '_'
+                let started_new_word = 1
+            else
+                let pascal_str .= self.str[i]
+            endif
+            let i = i + 1
+        endwhile
+        return L_s(pascal_str)
+    endfunction
+
     return s
 endfunction
