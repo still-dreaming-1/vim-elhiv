@@ -9,5 +9,9 @@ function! L_current_cursor()
 		return getline(".")[col(".")-1]
 	endfunction
 
+    function cursor.line()
+		return getline(".")
+    endfunction
+
 	return cursor
 endfunction
