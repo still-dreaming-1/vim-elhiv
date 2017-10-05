@@ -1,5 +1,5 @@
 function! L_current_buffer()
-	let buf= {}
+	let buf = {}
 
 	function! buf.dir()
 		return L_dir(expand("%:p:h"))
