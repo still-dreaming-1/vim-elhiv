@@ -31,11 +31,11 @@ function! L_file(path)
 	endfunction
 
 	function! file.edit()
-		execute "e ".fnameescape(self.path)
+		execute 'e '.fnameescape(self.path)
 	endfunction
 
 	function! file.source()
-		execute "source ".fnameescape(self.path)
+		execute 'source '.fnameescape(self.path)
 	endfunction
 
 	function! file.size()
