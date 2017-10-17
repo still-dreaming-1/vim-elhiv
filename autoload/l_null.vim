@@ -1,3 +1,3 @@
-function! l_null#new()
-	return { 'is_null' : 1 }
+function! l_null#new() abort
+    return { 'is_null' : 1 }
 endfunction
