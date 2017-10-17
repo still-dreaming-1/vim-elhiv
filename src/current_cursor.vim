@@ -6,11 +6,11 @@ function! L_current_cursor()
     endfunction
 
     function! cursor.char()
-        return getline(".")[col(".")-1]
+        return getline('.')[col('.')-1]
     endfunction
 
     function cursor.line()
-        return getline(".")
+        return getline('.')
     endfunction
 
     return cursor

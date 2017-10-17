@@ -4,7 +4,7 @@ function! L_maps()
 	function! maps.normal_mode_map_exists_from(str)
 		let rhs= maparg(a:str, 'n')
 		" let rhs= mapcheck(a:str, 'n')
-		if rhs == ''
+		if rhs ==# ''
 			return 0
 		endif
 		return 1
@@ -12,7 +12,7 @@ function! L_maps()
 
 	function! maps.normal_mode_map_exists_to(str)
 		let lhs= hasmapto(a:str, 'n')
-		if lhs == ''
+		if lhs ==# ''
 			return 0
 		endif
 		return 1
