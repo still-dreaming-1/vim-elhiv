@@ -1,9 +1,9 @@
 UTSuite dir modifying
 
 function! s:setup_script_vars()
-	let s:static_data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
-		let s:static_empty_dir= s:static_data_dir.get_contained_dir('empty dir')
-	let s:data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('test_data')
+	let s:static_data_dir = L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
+		let s:static_empty_dir = s:static_data_dir.get_contained_dir('empty dir')
+	let s:data_dir = L_dir(g:elhiv_dir_path).get_contained_dir('test_data')
 endfunction
 
 function! s:Setup()
@@ -29,7 +29,7 @@ function! s:Teardown()
 endfunction
 
 function! s:Test_copy_empty_dir_and_delete()
-	let copy= s:data_dir.get_contained_dir('empty dir')
+	let copy = s:data_dir.get_contained_dir('empty dir')
 	Assert !copy.exists()
 	call s:static_empty_dir.copy_to(copy)
 	Assert copy.exists()
@@ -40,7 +40,7 @@ function! s:Test_copy_empty_dir_and_delete()
 endfunction
 
 function! s:Test_create_no_recursion_and_delete()
-	let new_dir= s:data_dir.get_contained_dir('new dir')
+	let new_dir = s:data_dir.get_contained_dir('new dir')
 	Assert !new_dir.exists()
 	call new_dir.create()
 	Assert new_dir.exists()
@@ -50,29 +50,33 @@ function! s:Test_create_no_recursion_and_delete()
 endfunction
 
 function! s:Test_get_all_files_when_1_file()
-	let file= s:data_dir.get_contained_file('file')
+	let file = s:data_dir.get_contained_file('file')
 	Assert !file.readable()
 	Assert !file.writable()
 	call file.create()
 	Assert file.readable()
-	let file_list= s:data_dir.get_all_files()
+	let file_list = s:data_dir.get_all_files()
 	AssertEquals(1, len(file_list))
-	let same_file= file_list[0]
+	let same_file = file_list[0]
 	Assert L_s(same_file.path).ends_with('file')
 	AssertEquals(same_file.path, file.path)
 endfunction
 
 function! s:Test_get_all_files_when_2_files()
-	let expected_first_file= s:data_dir.get_contained_file('first file')
+	let expected_first_file = s:data_dir.get_contained_file('first file')
 	call expected_first_file.create()
-	let expected_second_file= s:data_dir.get_contained_file('second file')
+	let expected_second_file = s:data_dir.get_contained_file('second file')
 	call expected_second_file.create()
-	let all_files= s:data_dir.get_all_files()
+	let all_files = s:data_dir.get_all_files()
 	AssertEquals(2, len(all_files))
-	let actual_first_file= all_files[0]
+	let actual_first_file = all_files[0]
+    if L_s(actual_first_file.path).ends_with('second file')
+        call reverse(all_files)
+        let actual_first_file = all_files[0]
+    endif
 	Assert actual_first_file.readable()
 	Assert L_s(actual_first_file.path).ends_with('first file')
-	let actual_second_file= all_files[1]
+	let actual_second_file = all_files[1]
 	Assert actual_second_file.readable()
 	Assert L_s(actual_second_file.path).ends_with('second file')
 endfunction
