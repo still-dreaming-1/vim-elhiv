@@ -1,87 +1,87 @@
 UTSuite S
 
 function! s:Test_str()
-    let s= L_s('hello')
+    let s = L_s('hello')
     AssertEquals('hello', s.str)
 endfunction
 
 function! s:Test_len_of_empty_string_is_0()
-    let s= L_s('')
+    let s = L_s('')
     AssertEquals(0, s.len)
 endfunction
 
 function! s:Test_len_of_string_with_1_char()
-    let s= L_s('d')
+    let s = L_s('d')
     AssertEquals(1, s.len)
 endfunction
 
 function! s:Test_len_of_longer_string()
-    let s= L_s('I am a 27 character string!')
+    let s = L_s('I am a 27 character string!')
     AssertEquals(27, s.len)
 endfunction
 
 function! s:Test_contains_when_searching_for_the_only_char()
-    let s= L_s('1')
+    let s = L_s('1')
     Assert s.contains('1')
 endfunction
 
 function! s:Test_contains_when_searching_for_the_entire_string()
-    let s= L_s('normal sized string')
+    let s = L_s('normal sized string')
     Assert s.contains('normal sized string')
 endfunction
 
 function! s:Test_contains_when_searching_for_middle_of_string()
-    let s= L_s('normal sized string')
+    let s = L_s('normal sized string')
     Assert s.contains('sized')
 endfunction
 
 function! s:Test_not_contains()
-    let s= L_s('2')
+    let s = L_s('2')
     Assert !s.contains('1')
 endfunction
 
 function! s:Test_not_contains_when_empty()
-    let s= L_s('')
+    let s = L_s('')
     Assert !s.contains('1')
 endfunction
 
 function! s:Test_index_of()
-    let s= L_s('hello? where are you?')
+    let s = L_s('hello? where are you?')
     AssertEquals(5, s.index_of('?'))
 endfunction
 
 function! s:Test_index_of_with_multi_char_needle()
-    let s= L_s('hello? where are you?')
+    let s = L_s('hello? where are you?')
     AssertEquals(7, s.index_of('where'))
 endfunction
 
 function! s:Test_index_of_with_nothing_before_needle()
-    let s= L_s('/some dir/another dir/filename')
+    let s = L_s('/some dir/another dir/filename')
     AssertEquals(0, s.index_of('/some'))
 endfunction
 
 function! s:Test_index_of_with_nothing_after_needle()
-    let s= L_s('some dir/')
+    let s = L_s('some dir/')
     AssertEquals(8, s.index_of('/'))
 endfunction
 
 function! s:Test_index_of_when_needle_not_in_haystack()
-    let s= L_s('a')
+    let s = L_s('a')
     AssertEquals(-1, s.index_of('b'))
 endfunction
 
 function! s:Test_ridx()
-    let s= L_s(';ok;there')
+    let s = L_s(';ok;there')
     AssertEquals(3, s.ridx(';'))
 endfunction
 
 function! s:Test_ridx_with_multi_char_needle()
-    let s= L_s(';ok;there')
+    let s = L_s(';ok;there')
     AssertEquals(1, s.ridx('ok'))
 endfunction
 
 function! s:Test_ridx_with_nothing_before_needle()
-    let s= L_s('/some dir/another dir/filename')
+    let s = L_s('/some dir/another dir/filename')
     AssertEquals(0, s.ridx('/some'))
 endfunction
 
@@ -406,4 +406,6 @@ function! s:Test_to_pascal_case()
     Assert L_s('your_mom').to_pascal_case().str ==# 'YourMom'
     Assert L_s('your_mommas_mom').to_pascal_case().str ==# 'YourMommasMom'
     Assert L_s('Your_Mommas_Mom').to_pascal_case().str ==# 'YourMommasMom'
+    Assert L_s('theDb').to_pascal_case().str ==# 'TheDb'
+    Assert L_s('theDB').to_pascal_case().str ==# 'TheDb'
 endfunction

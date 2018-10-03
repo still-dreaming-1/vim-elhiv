@@ -146,7 +146,12 @@ function! L_s(str)
             endif
             let i = i + 1
         endwhile
-        return L_s(pascal_str)
+        let pascal_s = L_s(pascal_str)
+        if pascal_s.ends_with('DB')
+            let pascal_s = pascal_s.remove_end()
+            let pascal_s = L_s(pascal_s.str . 'b')
+        endif
+        return pascal_s
     endfunction
 
     return s
