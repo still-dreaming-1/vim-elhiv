@@ -11,7 +11,7 @@ function! L_file(path)
 	endfunction
 
 	function! file.writable()
-		let writable= filewritable(self.path)
+		let writable = filewritable(self.path)
 		if writable == 1
 			return 1
 		endif
@@ -53,25 +53,46 @@ function! L_file(path)
 
 	" searches for all occurances of needle in the file contents. needle is not treated as a regular expression
 	function! file.find_all(needle)
-		let pos_list= []
-		let y= 0
+		let pos_list = []
+		let y = 0
 		for line in self.read_lines()
-			let start= 0
-			let y= y + 1
-			let line_len= len(line)
-			let x= 0
+			let start = 0
+			let y = y + 1
+			let line_len = len(line)
+			let x = 0
 			while x < line_len
-				let x= stridx(line, a:needle, start)
+				let x = stridx(line, a:needle, start)
 				if x >= 0
 					call add(pos_list, L_pos(x + 1, y))
 				else
 					break
 				endif
-				let start= x + 1
+				let start = x + 1
 			endwhile
 		endfor
 		return pos_list
 	endfunction
+
+    function! file.replace_line(number, content_s) abort
+        if !self.writable()
+            throw 'L_file#replace_line#precondition_failed: this file is not writable'
+        endif
+        if a:number < 1
+            throw 'L_file#replace_line#precondition_failed: number must be greater than 0. number: '. a:number
+        endif
+        let lines = self.read_lines()
+        if len(lines) < a:number
+            throw 'L_file#replace_line#precondition_failed: number must be one of the existing lines. number: '
+                \ . a:number . ' total lines: ' . len(lines)
+        endif
+        let line_index = a:number - 1
+        if lines[line_index] !=# a:content_s.str
+            let lines[line_index] = a:content_s.str
+            call writefile(lines, self.path)
+            return 1
+        endif
+        return 0
+    endfunction
 
 	return file
 endfunction

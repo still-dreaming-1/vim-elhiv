@@ -1,8 +1,8 @@
 UTSuite integration non-empty file
 
 function! s:Setup()
-	let s:static_data_dir= L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
-	let s:file= s:static_data_dir.get_contained_file('non_empty_php_file.php')
+	let s:static_data_dir = L_dir(g:elhiv_dir_path).get_contained_dir('static test data')
+	let s:file = s:static_data_dir.get_contained_file('non_empty_php_file.php')
 endfunction
 
 function! s:Test_readable()
@@ -19,7 +19,7 @@ function! s:Test_not_empty()
 endfunction
 
 function! s:Test_contains_the_lines()
-	let lines= s:file.read_lines()
+	let lines = s:file.read_lines()
 	AssertEquals('<?', lines[0])
 	AssertEquals('class non_empty_php_file {', lines[1])
 	AssertEquals('}', lines[2])
@@ -46,12 +46,52 @@ function! s:Test_find_all_for_char_only_on_last_line()
 endfunction
 
 function! s:Test_find_all_when_found_twice()
-	let pos_list= s:file.find_all('s')
+	let pos_list = s:file.find_all('s')
 	AssertEquals(len(pos_list), 2)
-	let pos= pos_list[0]
+	let pos = pos_list[0]
 	AssertEquals(pos.y, 2)
 	AssertEquals(pos.x, 4)
-	let pos= pos_list[1]
+	let pos = pos_list[1]
 	AssertEquals(pos.y, 2)
 	AssertEquals(pos.x, 5)
+endfunction
+
+function! s:Test_replace_line()
+    AssertEquals(s:file.replace_line(2, L_s('class non_empty_php_file {')), 0)
+    call s:Test_contains_the_lines()
+
+    let caught_exception = ''
+    try
+        call s:file.replace_line(-1, L_s('the negative line'))
+    catch /L_file#replace_line#precondition_failed:.*/
+        let caught_exception = v:exception
+    endtry
+    AssertDiffers(caught_exception, '')
+
+    let caught_exception = ''
+    try
+        call s:file.replace_line(0, L_s('the zero line'))
+    catch /L_file#replace_line#precondition_failed:.*/
+        let caught_exception = v:exception
+    endtry
+    AssertDiffers(caught_exception, '')
+
+    let caught_exception = ''
+    try
+        call s:file.replace_line(4, L_s('the non-existent 4th line'))
+    catch /L_file#replace_line#precondition_failed:.*/
+        let caught_exception = v:exception
+    endtry
+    AssertDiffers(caught_exception, '')
+
+	let non_existent_file = L_file(s:static_data_dir.path . '/non_existent_file.txt')
+    Assert !non_existent_file.readable()
+    Assert !non_existent_file.writable()
+    let caught_exception = ''
+    try
+        call non_existent_file.replace_line(1, L_s('a line for the non-existent file'))
+    catch /L_file#replace_line#precondition_failed:.*/
+        let caught_exception = v:exception
+    endtry
+    AssertDiffers(caught_exception, '')
 endfunction
