@@ -154,5 +154,39 @@ function! L_s(str)
         return pascal_s
     endfunction
 
+    function! s.to_screaming_snake_case()
+        let i = 0
+        let screaming_snake_str = ''
+        let previousWasUnderscore = 0
+        let previousWasUppercase = 0
+        let previousWasLowercase = 0
+        while i < self.len
+            let currentChar = self.str[i]
+            let currentIsUnderscore = currentChar ==# '_'
+            let currentIsUppercase = tolower(currentChar) !=# currentChar
+            let currentIsLowercase = toupper(currentChar) !=# currentChar
+
+            if i != 0 && !currentIsUnderscore && !previousWasUnderscore
+                if previousWasLowercase && currentIsUppercase
+                    let screaming_snake_str .= '_'
+                elseif !previousWasLowercase && !previousWasUppercase
+                    if currentIsLowercase || currentIsUppercase
+                        let screaming_snake_str .= '_'
+                    endif
+                elseif (previousWasLowercase || previousWasUppercase) && (!currentIsLowercase && !currentIsUppercase)
+                    let screaming_snake_str .= '_'
+                endif
+            endif
+            let screaming_snake_str .= toupper(currentChar)
+
+            let previousWasUnderscore = currentIsUnderscore
+            let previousWasUppercase = currentIsUppercase
+            let previousWasLowercase = currentIsLowercase
+            let i = i + 1
+        endwhile
+        let screaming_snake_s = L_s(screaming_snake_str)
+        return screaming_snake_s
+    endfunction
+
     return s
 endfunction

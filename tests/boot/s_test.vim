@@ -409,3 +409,27 @@ function! s:Test_to_pascal_case()
     Assert L_s('theDb').to_pascal_case().str ==# 'TheDb'
     Assert L_s('theDB').to_pascal_case().str ==# 'TheDb'
 endfunction
+
+function! s:Test_to_screaming_snake_case()
+    Assert 'abcd' == 'ABCD'
+    Assert 'ABCD' == 'abcd'
+    Assert 'abcd' == 'abcd'
+    Assert 'abcd' ==# 'abcd'
+    Assert 'ABCD' ==# 'ABCD'
+    Assert 'ABCD' !=# 'abcd'
+    Assert 'abcd' !=# 'ABCD'
+    Assert L_s('B').to_screaming_snake_case().str ==# 'B'
+    Assert L_s('').to_screaming_snake_case().str ==# ''
+    Assert L_s('b').to_screaming_snake_case().str ==# 'B'
+    Assert L_s('your').to_screaming_snake_case().str ==# 'YOUR'
+    Assert L_s('yourMom').to_screaming_snake_case().str ==# 'YOUR_MOM'
+    Assert L_s('YourMom').to_screaming_snake_case().str ==# 'YOUR_MOM'
+    Assert L_s('yourmom').to_screaming_snake_case().str ==# 'YOURMOM'
+    Assert L_s('your_mom').to_screaming_snake_case().str ==# 'YOUR_MOM'
+    Assert L_s('your_mommas_mom').to_screaming_snake_case().str ==# 'YOUR_MOMMAS_MOM'
+    Assert L_s('Your_Mommas_Mom').to_screaming_snake_case().str ==# 'YOUR_MOMMAS_MOM'
+    Assert L_s('YOUR_MOMMAS_MOM').to_screaming_snake_case().str ==# 'YOUR_MOMMAS_MOM'
+    Assert L_s('theDb').to_screaming_snake_case().str ==# 'THE_DB'
+    Assert L_s('theDB').to_screaming_snake_case().str ==# 'THE_DB'
+    Assert L_s('the3musketeers').to_screaming_snake_case().str ==# 'THE_3_MUSKETEERS'
+endfunction
