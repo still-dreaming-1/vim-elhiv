@@ -131,61 +131,136 @@ function! L_s(str)
         return result.replace(a:needle, a:new_needle, start_index + len(a:new_needle))
     endfunction
 
+    function! s.to_camel_case()
+        return self.to_camel_or_pascal_case(1)
+    endfunction
+
     function! s.to_pascal_case()
+        return self.to_camel_or_pascal_case(0)
+    endfunction
+
+    function! s.to_camel_or_pascal_case(to_camel)
         let i = 0
-        let started_new_word = 1
-        let pascal_str = ''
+        let updated_str = ''
+        let previous_was_underscore = 0
+        let previous_was_lowercase = 0
+        let previous_was_uppercase = 0
+        let processed_first_letter = 0
         while i < self.len
-            if started_new_word
-                let pascal_str .= toupper(self.str[i])
-                let started_new_word = 0
-            elseif self.str[i] ==# '_'
-                let started_new_word = 1
-            else
-                let pascal_str .= self.str[i]
+            let current_char = self.str[i]
+            let current_is_underscore = current_char ==# '_'
+            let current_is_uppercase = tolower(current_char) !=# current_char
+            let current_is_lowercase = toupper(current_char) !=# current_char
+
+            " if updated_str ==# 'your' && previous_was_underscore
+                " echo 'at your, current_char = ' . current_char . ' current_is_underscore = ' . current_is_underscore . ' current_is_lowercase = ' . current_is_lowercase . ' current_is_uppercase = ' . current_is_uppercase
+                " echo 'processed_first_letter = ' . processed_first_letter
+            " endif
+
+            if !processed_first_letter
+                if a:to_camel && (i == 0 || previous_was_underscore)
+                    let updated_str .= tolower(current_char)
+                else
+                    let updated_str .= toupper(current_char)
+                endif
+            elseif i == 0 && current_is_underscore
+                let updated_str .= current_char
+            elseif !previous_was_lowercase && !previous_was_uppercase && (current_is_lowercase || current_is_uppercase)
+                let updated_str .= toupper(current_char)
+            elseif current_is_uppercase && previous_was_uppercase
+                let updated_str .= tolower(current_char)
+            elseif !current_is_underscore
+                let updated_str .= current_char
+            endif
+
+            let previous_was_underscore = current_is_underscore
+            let previous_was_uppercase = current_is_uppercase
+            let previous_was_lowercase = current_is_lowercase
+            if !processed_first_letter && (current_is_lowercase || current_is_uppercase)
+                let processed_first_letter = 1
             endif
             let i = i + 1
         endwhile
-        let pascal_s = L_s(pascal_str)
-        if pascal_s.ends_with('DB')
-            let pascal_s = pascal_s.remove_end()
-            let pascal_s = L_s(pascal_s.str . 'b')
-        endif
-        return pascal_s
+        return L_s(updated_str)
     endfunction
 
     function! s.to_screaming_snake_case()
         let i = 0
         let screaming_snake_str = ''
-        let previousWasUnderscore = 0
-        let previousWasUppercase = 0
-        let previousWasLowercase = 0
+        let previous_was_underscore = 0
+        let previous_was_uppercase = 0
+        let previous_was_lowercase = 0
         while i < self.len
-            let currentChar = self.str[i]
-            let currentIsUnderscore = currentChar ==# '_'
-            let currentIsUppercase = tolower(currentChar) !=# currentChar
-            let currentIsLowercase = toupper(currentChar) !=# currentChar
+            let current_char = self.str[i]
+            let current_is_underscore = current_char ==# '_'
+            let current_is_uppercase = tolower(current_char) !=# current_char
+            let current_is_lowercase = toupper(current_char) !=# current_char
 
-            if i != 0 && !currentIsUnderscore && !previousWasUnderscore
-                if previousWasLowercase && currentIsUppercase
+            if i != 0 && !current_is_underscore && !previous_was_underscore
+                if previous_was_lowercase && current_is_uppercase
                     let screaming_snake_str .= '_'
-                elseif !previousWasLowercase && !previousWasUppercase
-                    if currentIsLowercase || currentIsUppercase
+                elseif !previous_was_lowercase && !previous_was_uppercase
+                    if current_is_lowercase || current_is_uppercase
                         let screaming_snake_str .= '_'
                     endif
-                elseif (previousWasLowercase || previousWasUppercase) && (!currentIsLowercase && !currentIsUppercase)
+                elseif (previous_was_lowercase || previous_was_uppercase) && (!current_is_lowercase && !current_is_uppercase)
                     let screaming_snake_str .= '_'
                 endif
             endif
-            let screaming_snake_str .= toupper(currentChar)
+            let screaming_snake_str .= toupper(current_char)
 
-            let previousWasUnderscore = currentIsUnderscore
-            let previousWasUppercase = currentIsUppercase
-            let previousWasLowercase = currentIsLowercase
+            let previous_was_underscore = current_is_underscore
+            let previous_was_uppercase = current_is_uppercase
+            let previous_was_lowercase = current_is_lowercase
             let i = i + 1
         endwhile
-        let screaming_snake_s = L_s(screaming_snake_str)
-        return screaming_snake_s
+        return L_s(screaming_snake_str)
+    endfunction
+
+    function! s.smart_to_camel_or_pascal_case()
+        let i = 0
+        let starts_with_underscore = 0
+        let has_underscore_not_at_start = 0
+        let first_letter_is_lowercase = 0
+        let first_letter_is_uppercase = 0
+        while i < self.len
+            let current_char = self.str[i]
+            let current_is_underscore = current_char ==# '_'
+            let current_is_lowercase = toupper(current_char) !=# current_char
+            let current_is_uppercase = tolower(current_char) !=# current_char
+            if !first_letter_is_lowercase && !first_letter_is_uppercase
+                if current_is_lowercase
+                    let first_letter_is_lowercase = 1
+                elseif current_is_uppercase
+                    let first_letter_is_uppercase = 1
+                endif
+            endif
+            if i == 0
+                if current_is_underscore
+                    let starts_with_underscore = 1
+                endif
+            elseif current_is_underscore
+                let has_underscore_not_at_start = 1
+            endif
+            let i = i + 1
+        endwhile
+        if starts_with_underscore
+            return self.to_camel_case()
+        endif
+        if has_underscore_not_at_start
+            if first_letter_is_lowercase
+                return self.to_camel_case()
+            elseif first_letter_is_uppercase
+                return self.to_pascal_case()
+            endif
+        else
+            if first_letter_is_lowercase
+                return self.to_pascal_case()
+            elseif first_letter_is_uppercase
+                return self.to_camel_case()
+            endif
+        endif
+        return L_s(self.str)
     endfunction
 
     return s
